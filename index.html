@@ -39,8 +39,8 @@ body{
 ─────────────────────────────────────────────── */
 .topbar{
   position:sticky;top:0;z-index:50;
-  background:var(--cream);
-  border-bottom:2px solid var(--k);
+  background:#143B78;
+  border-bottom:3px solid var(--col);
 }
 .topbar-in{
   display:flex;align-items:flex-start;justify-content:space-between;
@@ -52,23 +52,24 @@ body{
 }
 .brand-jga{
   font-family:'Montserrat',sans-serif;font-weight:900;
-  font-size:3.2rem;letter-spacing:-.03em;color:var(--k);line-height:1;
+  font-size:3.2rem;letter-spacing:-.03em;color:var(--w);line-height:1;
 }
 .brand-sub{
   font-family:'Montserrat',sans-serif;font-weight:600;
   font-size:.4rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--k);line-height:1.6;
+  color:rgba(255,255,255,.75);line-height:1.6;
+  margin-left:4px;
 }
 .topbar-right{display:flex;align-items:center;gap:1rem;padding-top:1.6rem}
 .lang{display:flex;gap:.25rem}
 .lang button{
   font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:700;
   letter-spacing:.15em;text-transform:uppercase;
-  padding:.5rem 1rem;border:1.5px solid var(--k);cursor:pointer;
-  background:none;color:var(--k);transition:all .15s;
+  padding:.5rem 1rem;border:1.5px solid rgba(255,255,255,.4);cursor:pointer;
+  background:none;color:rgba(255,255,255,.75);transition:all .15s;
 }
-.lang button.on{background:var(--k);color:var(--w)}
-.lang button:hover:not(.on){background:var(--warm)}
+.lang button.on{background:var(--col);color:#143B78;border-color:var(--col)}
+.lang button:hover:not(.on){background:rgba(255,255,255,.08);color:var(--w);border-color:rgba(255,255,255,.7)}
 
 /* ───────────────────────────────────────────────
    HERO — fondo cream, contraste suave
@@ -1367,6 +1368,7 @@ footer{background:#000;color:rgba(255,255,255,.55);padding:4rem 0 2.5rem}
   font-family:'Montserrat',sans-serif;font-weight:600;
   font-size:.42rem;letter-spacing:.2em;text-transform:uppercase;
   color:rgba(255,255,255,.55);line-height:1.6;margin-top:.3rem;
+  margin-left:4px;
 }
 .footer-meta{
   font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:500;
@@ -1382,6 +1384,84 @@ footer{background:#000;color:rgba(255,255,255,.55);padding:4rem 0 2.5rem}
   text-align:justify;text-align-last:left;hyphens:none;
 }
 .footer-disclaimer strong{color:rgba(255,255,255,.85);font-weight:800}
+
+/* ───────────────────────────────────────────────
+   LAPTOP BREAKPOINT — compacta tablas y bloques
+   numéricos en pantallas medianas (900-1400px)
+─────────────────────────────────────────────── */
+@media(min-width:901px) and (max-width:1400px){
+  /* dtable (sección 03 — declaración de renta) */
+  .dtable thead th{padding:16px 18px;font-size:12px}
+  .dtable tbody td{padding:16px 18px}
+  .dtable td.label{font-size:15px}
+  .dtable td.value{font-size:22px}
+  .dtable td.currency{font-size:11px}
+  .dtable td.subhead{font-size:11px;padding-top:18px}
+  .dtable .savings-row td{padding:18px 18px}
+  .dtable .savings-row td.savings-value{font-size:32px}
+
+  /* legal-table (sección 09) */
+  .legal-table thead th{padding:18px 20px;font-size:12px}
+  .legal-table tbody td{padding:18px 20px}
+  .legal-table .norma{font-size:15px}
+  .legal-table .year{font-size:1.3rem}
+  .legal-table .desc{font-size:.88rem}
+
+  /* market (sección 08) */
+  .market-head{padding:1.6rem 1.9rem 1.2rem}
+  .market-head h4{font-size:1.25rem}
+  .market-head p{font-size:.86rem}
+  .market-body{padding:1.1rem 1.9rem .3rem}
+  .market-row{padding:.75rem 0}
+  .market-row .val{font-size:1.2rem}
+  .market-foot{padding:1.4rem 1.9rem}
+  .market-foot .val{font-size:1.85rem}
+
+  /* case (sección 10) */
+  .case-params{padding:1.6rem 2rem}
+  .case-param-val{font-size:1.5rem}
+  .case-phases{padding:2rem}
+  .case-phase{margin-bottom:1.6rem}
+  .case-phase-num{font-size:1.7rem}
+  .case-phase h4{font-size:1rem}
+  .case-phase-total{font-size:1.2rem}
+  .case-row{padding:.75rem 0}
+  .case-row .val{font-size:1.02rem}
+  .case-total-block{padding:1.5rem 2rem}
+  .case-total-block .val{font-size:2.1rem}
+  .case-disclaimer{padding:1.2rem 2rem;font-size:.82rem}
+
+  /* glossary (sección 13) */
+  .glossary-row{padding:1.3rem 1.9rem;grid-template-columns:240px 1fr;gap:1.5rem}
+  .glossary-term{font-size:.88rem}
+  .glossary-def{font-size:.88rem}
+
+  /* due diligence (sección 12) */
+  .dd-item{padding:1.4rem 1.6rem}
+  .dd-item h5{font-size:.92rem}
+  .dd-item p{font-size:.85rem}
+
+  /* faq (sección 11) */
+  .faq-item summary{font-size:.98rem;padding:1.4rem 0}
+  .faq-item .a{font-size:.92rem;padding:0 0 1.4rem}
+
+  /* hero */
+  .hero-title{font-size:clamp(2.4rem,5vw,3.8rem)}
+  .kpi-strip{padding:2.4rem 2rem}
+  .kpi-demo .kpi-val{font-size:2.6rem}
+
+  /* CTA (sección final) */
+  .cta{padding:5rem 0 4rem}
+  .cta h2{font-size:2.2rem}
+  .cta-service h5{font-size:.9rem}
+  .cta-service p{font-size:.84rem}
+  .contact-card{padding:2.2rem 2rem}
+
+  /* calculadora (sección 04) */
+  .calc-row .val{font-size:1.3rem}
+  .calc-feat .val{font-size:2rem}
+  .calc-side{padding:2rem}
+}
 
 /* ───────────────────────────────────────────────
    MOBILE
