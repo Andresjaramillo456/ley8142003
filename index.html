@@ -1,0 +1,3005 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ley 814 de 2003 · "Ley de Cine" · Régimen de Inversión — JGA Abogados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ───────────────────────────────────────────────
+   JGA DESIGN SYSTEM — variables oficiales
+─────────────────────────────────────────────── */
+:root{
+  --k:       #0A0A0A;
+  --w:       #FFFFFF;
+  --cream:   #FAF8F4;
+  --warm:    #F0EDE6;
+  --line:    #DDD8CF;
+  --az:      #1A3A6B;
+  --az-light:#EEF2FA;
+  --col:     #F5C800;
+  --gold:    #8C6A2C;
+  --vd:      #1A5C38;
+  --rj:      #8B1A1A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Montserrat',system-ui,sans-serif;
+  background:var(--cream);color:var(--k);
+  font-size:14px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+.wrap{max-width:1200px;margin:0 auto;padding:0 2rem}
+
+/* ───────────────────────────────────────────────
+   TOPBAR — logo stacked grande
+─────────────────────────────────────────────── */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:var(--cream);
+  border-bottom:2px solid var(--k);
+}
+.topbar-in{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  padding:1.1rem 0;
+}
+.brand{
+  display:flex;flex-direction:column;align-items:flex-start;gap:.1rem;
+  text-decoration:none;color:inherit;
+}
+.brand-jga{
+  font-family:'Montserrat',sans-serif;font-weight:900;
+  font-size:3.2rem;letter-spacing:-.03em;color:var(--k);line-height:1;
+}
+.brand-sub{
+  font-family:'Montserrat',sans-serif;font-weight:600;
+  font-size:.4rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--k);line-height:1.6;
+}
+.topbar-right{display:flex;align-items:center;gap:1rem;padding-top:1.6rem}
+.lang{display:flex;gap:.25rem}
+.lang button{
+  font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  padding:.5rem 1rem;border:1.5px solid var(--k);cursor:pointer;
+  background:none;color:var(--k);transition:all .15s;
+}
+.lang button.on{background:var(--k);color:var(--w)}
+.lang button:hover:not(.on){background:var(--warm)}
+
+/* ───────────────────────────────────────────────
+   HERO — fondo cream, contraste suave
+─────────────────────────────────────────────── */
+.hero{
+  background:var(--cream);color:var(--k);
+  padding:5rem 0 4rem;
+  position:relative;
+}
+.hero-eyebrow{
+  font-family:'Montserrat',sans-serif;font-size:.6rem;font-weight:700;
+  letter-spacing:.25em;text-transform:uppercase;
+  color:var(--k);margin-bottom:2rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.hero-eyebrow::before{
+  content:"";width:48px;height:2px;background:var(--col);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.3fr 1fr;
+  gap:5rem;align-items:end;
+}
+.hero-title{
+  font-family:'Montserrat',sans-serif;font-weight:900;
+  font-size:clamp(2.4rem,6vw,4.2rem);
+  letter-spacing:-.025em;text-transform:uppercase;line-height:.98;
+  color:var(--k);margin-bottom:2rem;
+}
+.hero-title em{
+  font-style:normal;color:var(--az);
+  display:inline-block;
+  border-bottom:4px solid var(--col);
+  padding-bottom:.05em;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.jga-badge{
+  display:inline-block;
+  border:1px solid var(--line);
+  padding:.45rem .85rem;
+  font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--k);background:var(--w);
+}
+.jga-badge.hi{
+  border-color:var(--az);background:var(--az-light);color:var(--az);
+}
+
+/* Hero right: descripción + KPI strip */
+.hero-right{display:flex;flex-direction:column;gap:2rem}
+.hero-sub{
+  font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:500;
+  line-height:1.75;color:var(--k);
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.hero-sub strong{color:var(--az);font-weight:700}
+
+/* KPI strip — 3 columnas en bg blanco */
+.hero-kpi{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.kpi{background:var(--w);padding:1.4rem 1.2rem}
+.kpi-lbl{
+  font-family:'Montserrat',sans-serif;font-size:.48rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--k);
+  margin-bottom:.5rem;line-height:1.4;
+}
+.kpi-val{
+  font-family:'Montserrat',sans-serif;font-size:2.1rem;font-weight:900;
+  letter-spacing:-.03em;line-height:1;color:var(--k);
+}
+.kpi-val .pct{color:var(--az)}
+
+/* Gold bar — cierre */
+.gold-bar{height:4px;background:var(--col)}
+
+/* Language utility */
+[data-lang-show]:not(.show){display:none}
+
+/* ───────────────────────────────────────────────
+   SECTION 01 — ¿Qué es la Ley 814?
+─────────────────────────────────────────────── */
+.wrap-doc{max-width:920px;margin:0 auto;padding:0 2rem}
+.section{padding:5rem 0;background:var(--cream)}
+
+.section-header{
+  border-bottom:3px solid var(--k);
+  padding-bottom:.7rem;margin-bottom:2.5rem;
+}
+.section-header h2{
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--k);
+  margin-bottom:.6rem;
+}
+.section-header h3{
+  font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;
+  letter-spacing:-.02em;text-transform:uppercase;color:var(--k);line-height:1.05;
+}
+
+.prose{
+  font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:500;
+  line-height:1.8;color:var(--k);
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.prose p{margin-bottom:1.3rem}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--az);font-weight:800}
+
+.jga-note{
+  background:#fffbee;border-left:4px solid var(--col);
+  padding:1.4rem 1.7rem;margin-top:2.5rem;
+  font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:500;
+  color:var(--k);line-height:1.75;
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.jga-note strong{color:var(--az);font-weight:800}
+.jga-note .tag{
+  display:block;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--az);
+  margin-bottom:.5rem;
+}
+
+/* ───────────────────────────────────────────────
+   SECTION 02 — Por qué Ley 814 (propuesta de valor)
+─────────────────────────────────────────────── */
+.section--alt{background:var(--warm)}
+
+.vprop-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;
+}
+.vprop-card{
+  background:var(--w);border:1px solid var(--line);
+  padding:1.8rem 1.5rem;
+  display:flex;flex-direction:column;
+}
+.vprop-num{
+  display:inline-block;align-self:flex-start;
+  background:var(--az);color:var(--col);
+  font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:800;
+  letter-spacing:.15em;padding:.5rem .8rem;
+  margin-bottom:1.2rem;
+}
+.vprop-card h4{
+  font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.005em;color:var(--k);
+  line-height:1.2;margin-bottom:.9rem;
+}
+.vprop-card p{
+  font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:500;
+  line-height:1.7;color:var(--k);
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.vprop-card p strong{color:var(--az);font-weight:800}
+
+/* ───────────────────────────────────────────────
+   SECTION 03 — Declaración de renta (tabla)
+─────────────────────────────────────────────── */
+.section-lede{
+  font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:500;
+  line-height:1.75;color:var(--k);
+  margin-bottom:2.5rem;
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.section-lede strong{color:var(--az);font-weight:800}
+
+.dtable{
+  width:100%;border-collapse:collapse;
+  background:#F8F8F7;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.06);
+  font-family:'Montserrat',sans-serif;
+  font-feature-settings:"tnum","lnum";
+}
+
+/* Header */
+.dtable thead tr{background:#143B78}
+.dtable thead th{
+  padding:24px 24px;
+  text-transform:uppercase;
+  font-size:13px;font-weight:700;letter-spacing:0.08em;
+  color:var(--w);
+  text-align:left;
+}
+.dtable thead th.right{text-align:right}
+.dtable thead th.right:not(.with){
+  border-left:1px solid rgba(255,255,255,.25);
+}
+.dtable thead th.with{
+  background:#F2C500;color:#143B78;
+}
+
+/* Body rows */
+.dtable tbody tr{
+  border-bottom:1px solid #D9D9D9;
+}
+.dtable tbody td{
+  padding:24px 24px;
+  background:#F8F8F7;
+  font-family:'Montserrat',sans-serif;
+  vertical-align:middle;
+}
+.dtable tbody tr:last-child td{border-bottom:none}
+
+/* Label column */
+.dtable tbody td.lbl{
+  font-size:20px;font-weight:600;color:#111;
+}
+
+/* Value column */
+.dtable tbody td.right{text-align:right}
+.dtable tbody td.right:not(.with){
+  border-left:1px solid #D9D9D9;
+}
+.dtable .v{
+  font-family:'Montserrat',sans-serif;
+  font-size:28px;font-weight:800;
+  color:#143B78;letter-spacing:-0.02em;
+}
+.dtable .cur{
+  font-family:'Montserrat',sans-serif;
+  font-size:13px;font-weight:500;color:#7A7A7A;
+  margin-left:6px;letter-spacing:0.02em;
+}
+
+/* Highlighted column (con inversión en cine) — border-left 6px navy */
+.dtable tbody td.with{
+  border-left:6px solid #143B78;
+}
+
+/* Highlight row (Inversión × 165%) */
+.dtable tr.hl td.lbl{
+  color:#143B78;font-weight:700;
+  border-left:4px solid #F2C500;
+}
+
+/* Subtotales — section-divider style: border-top 3px navy, label uppercase navy */
+.dtable tr.sub td{
+  border-top:3px solid #143B78;
+}
+.dtable tr.sub td.lbl{
+  color:#143B78;font-weight:700;
+  text-transform:uppercase;font-size:16px;letter-spacing:0.04em;
+}
+.dtable tr.sub .v{color:#143B78}
+
+/* Savings row (delta) — bloque navy con valor en bloque gold */
+.dtable tr.delta td{
+  background:#143B78;
+  border-bottom:none;
+  padding:32px 24px;
+}
+.dtable tr.delta td.lbl{
+  color:#F2C500;
+  text-transform:uppercase;font-weight:700;
+  font-size:13px;letter-spacing:0.08em;
+}
+.dtable tr.delta td.right:not(.with){
+  color:rgba(255,255,255,.45);font-size:24px;
+  border-left:1px solid rgba(255,255,255,.25);
+}
+.dtable tr.delta td.with{
+  background:#F2C500;
+  border-left:6px solid #143B78;
+}
+.dtable tr.delta td.with .v{
+  color:#143B78;font-size:44px;font-weight:800;
+  letter-spacing:-0.02em;line-height:1;
+}
+.dtable tr.delta td.with .cur{
+  color:#143B78;font-size:13px;font-weight:500;
+  margin-left:8px;opacity:1;
+}
+
+/* ───────────────────────────────────────────────
+   STAT BAND — vertical centrado
+─────────────────────────────────────────────── */
+.stat-band{
+  background:#143B78;color:var(--w);
+  padding:4.5rem 0;
+  border-top:4px solid var(--col);
+  border-bottom:4px solid var(--col);
+  text-align:center;
+}
+.stat-band-grid{
+  max-width:880px;margin:0 auto;padding:0 2rem;
+}
+.sb-label{
+  font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:800;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--col);
+  line-height:1.5;margin-bottom:1.4rem;
+}
+.sb-value{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(3.5rem,7vw,5.5rem);font-weight:900;
+  letter-spacing:-.04em;line-height:.9;
+  color:var(--col);margin-bottom:1.8rem;
+}
+.sb-context{
+  font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:500;
+  line-height:1.7;color:var(--w);
+  max-width:680px;margin:0 auto;
+}
+.sb-context strong{color:var(--col);font-weight:700}
+
+/* ───────────────────────────────────────────────
+   SECTION 04 — Calculadora
+─────────────────────────────────────────────── */
+.calc{
+  max-width:1100px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--w);
+  border-radius:28px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,.06);
+}
+.calc-side{padding:2.5rem 2.5rem 3rem}
+.calc-inputs{background:#F8F8F7;border-right:1px solid #D9D9D9}
+.calc-outputs{background:#143B78;color:var(--w)}
+
+.calc-eyebrow{
+  font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--k);margin-bottom:.6rem;
+}
+.calc-outputs .calc-eyebrow{color:var(--col)}
+.calc-side h4{
+  font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.01em;color:var(--k);
+  margin-bottom:2rem;line-height:1.15;
+}
+.calc-outputs h4{color:var(--w)}
+
+.calc-field{margin-bottom:2rem}
+.calc-field:last-child{margin-bottom:0}
+.calc-field-label{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:800;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:var(--k);margin-bottom:1rem;
+}
+.calc-amount{
+  font-family:'Montserrat',sans-serif;font-size:2.6rem;font-weight:900;
+  letter-spacing:-.03em;line-height:1;color:#143B78;
+  margin-bottom:1rem;font-feature-settings:"tnum","lnum";
+}
+.calc-amount .cur{
+  font-family:'Montserrat',sans-serif;font-size:.85rem;color:#7A7A7A;
+  margin-left:.6rem;font-weight:600;letter-spacing:.05em;
+}
+
+input[type=range]{
+  width:100%;-webkit-appearance:none;appearance:none;
+  height:4px;background:#D9D9D9;outline:none;cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:22px;height:22px;background:#143B78;cursor:pointer;
+  border:3px solid var(--w);box-shadow:0 0 0 1px #143B78;border-radius:50%;
+}
+input[type=range]::-moz-range-thumb{
+  width:22px;height:22px;background:#143B78;cursor:pointer;
+  border:3px solid var(--w);box-shadow:0 0 0 1px #143B78;border-radius:50%;
+}
+.range-meta{
+  display:flex;justify-content:space-between;margin-top:.7rem;
+  font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:700;
+  color:var(--k);letter-spacing:.1em;
+}
+
+.calc-toggle{display:flex;flex-direction:column;gap:.6rem}
+.calc-toggle button{
+  background:var(--w);border:1.5px solid #D9D9D9;cursor:pointer;
+  padding:1.1rem 1.3rem;text-align:left;
+  display:grid;grid-template-columns:1fr auto;align-items:center;gap:1rem;
+  font-family:'Montserrat',sans-serif;transition:all .15s;
+}
+.calc-toggle button .name{
+  display:block;font-family:'Montserrat',sans-serif;
+  font-size:.95rem;font-weight:800;color:var(--k);
+  text-transform:uppercase;letter-spacing:.03em;
+}
+.calc-toggle button .descrip{
+  display:block;font-family:'Montserrat',sans-serif;
+  font-size:.82rem;font-weight:500;color:var(--k);margin-top:.4rem;
+}
+.calc-toggle button .rate{
+  font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;
+  color:#143B78;letter-spacing:-.02em;
+}
+.calc-toggle button.active{background:#143B78;border-color:#143B78}
+.calc-toggle button.active .name,
+.calc-toggle button.active .descrip{color:var(--w)}
+.calc-toggle button.active .rate{color:var(--col)}
+.calc-toggle button:hover:not(.active){background:#EFEFEF}
+
+/* OUTPUTS */
+.calc-row{
+  display:grid;grid-template-columns:1fr auto;gap:1rem;
+  padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.18);
+  align-items:baseline;
+}
+.calc-row:last-of-type{border-bottom:none}
+.calc-row .lbl{
+  font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:800;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--w);
+}
+.calc-row .val{
+  font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;
+  color:var(--col);letter-spacing:-.02em;font-feature-settings:"tnum","lnum";
+}
+.calc-row .val .cur{
+  font-family:'Montserrat',sans-serif;font-size:.75rem;
+  color:rgba(255,255,255,.65);margin-left:.5rem;font-weight:600;letter-spacing:.05em;
+}
+.calc-row.feat{
+  margin:1rem -2.5rem;padding:1.5rem 2.5rem;
+  background:var(--col);border:none;
+}
+.calc-row.feat .lbl{color:#143B78;font-weight:800}
+.calc-row.feat .val{color:#143B78;font-size:2.2rem;font-weight:900}
+.calc-row.feat .val .cur{color:#143B78;opacity:.7;font-weight:600}
+
+.calc-foot{
+  margin-top:1.8rem;padding-top:1.3rem;
+  border-top:1px solid rgba(255,255,255,.18);
+  font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:500;
+  line-height:1.7;color:var(--w);
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.calc-foot strong{color:var(--col);font-weight:700}
+
+/* ───────────────────────────────────────────────
+   SECTION 05 — Inversión vs Donación
+─────────────────────────────────────────────── */
+.split{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+  max-width:1200px;margin:0 auto;
+}
+.split-col{
+  background:#F8F8F7;
+  border-radius:28px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.06);
+}
+.split-head{
+  background:#143B78;color:var(--w);
+  padding:2rem 2.2rem 1.8rem;
+  border-bottom:4px solid var(--col);
+}
+.split-col.muted .split-head{
+  background:#4A4A4A;border-bottom-color:#7A7A7A;
+}
+.split-head .lbl{
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--col);
+  margin-bottom:.6rem;
+}
+.split-col.muted .split-head .lbl{color:#D9D9D9}
+.split-head h4{
+  font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;
+  letter-spacing:-.02em;text-transform:uppercase;color:var(--w);line-height:1.1;
+}
+.split-head p{
+  font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:500;
+  line-height:1.6;color:rgba(255,255,255,.78);margin-top:.6rem;
+}
+
+.split-body{padding:1rem 2.2rem 2.2rem}
+.split-row{
+  display:grid;grid-template-columns:26px 1fr;gap:1rem;
+  padding:1.2rem 0;border-bottom:1px solid #D9D9D9;align-items:start;
+}
+.split-row:last-child{border-bottom:none}
+.split-icon{
+  width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;
+  margin-top:1px;
+}
+.split-icon.yes{background:#1A5C38;color:var(--w)}
+.split-icon.no{background:#B3261E;color:var(--w)}
+.split-text{
+  font-family:'Montserrat',sans-serif;font-size:.98rem;font-weight:500;
+  line-height:1.55;color:var(--k);
+}
+.split-text strong{color:#143B78;font-weight:800}
+.split-col.muted .split-text strong{color:#4A4A4A}
+.split-foot{
+  margin-top:1.5rem;background:var(--col);
+  padding:1.4rem 1.7rem;border-radius:16px;
+  font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:600;
+  line-height:1.6;color:#143B78;
+}
+.split-foot strong{font-weight:800}
+
+/* ───────────────────────────────────────────────
+   SECTION 06 — El mecanismo (6 pasos + PA)
+─────────────────────────────────────────────── */
+.steps{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
+  max-width:1200px;margin:0 auto;
+}
+.step-card{
+  background:#F8F8F7;border-radius:16px;
+  box-shadow:0 4px 24px rgba(0,0,0,0.04);
+  padding:1.8rem;
+  display:flex;flex-direction:column;
+}
+.step-head{
+  display:flex;align-items:center;gap:.9rem;margin-bottom:1.2rem;
+}
+.step-num{
+  width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;
+  background:#143B78;color:var(--col);
+  font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:900;
+  letter-spacing:-.02em;flex-shrink:0;
+}
+.step-tag{
+  font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:#7A7A7A;
+}
+.step-card h4{
+  font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.005em;color:var(--k);
+  line-height:1.2;margin-bottom:.9rem;
+}
+.step-card p{
+  font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:500;
+  line-height:1.65;color:var(--k);flex:1;
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.step-card p strong{color:#143B78;font-weight:800}
+.step-foot{
+  margin-top:1.2rem;padding-top:.9rem;border-top:1px solid #D9D9D9;
+  font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:#7A7A7A;line-height:1.5;
+}
+
+/* PATRIMONIO AUTÓNOMO block */
+.pa-block{
+  margin-top:3rem;
+  background:#143B78;color:var(--w);
+  border-radius:28px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.06);
+  max-width:1200px;margin-left:auto;margin-right:auto;
+}
+.pa-header{
+  padding:2.5rem 2.5rem 1.5rem;
+  border-bottom:1px solid rgba(255,255,255,.15);
+  text-align:center;
+}
+.pa-eyebrow{
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;
+  letter-spacing:.25em;text-transform:uppercase;color:var(--col);
+  margin-bottom:.7rem;
+}
+.pa-title{
+  font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.02em;color:var(--w);
+  line-height:1.1;margin-bottom:.9rem;
+}
+.pa-lede{
+  font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:500;
+  line-height:1.7;color:rgba(255,255,255,.85);
+  max-width:780px;margin:0 auto;
+}
+.pa-lede strong{color:var(--col);font-weight:700}
+
+/* Diagrama del flujo */
+.pa-diagram{
+  padding:2.5rem;
+  display:grid;grid-template-columns:1fr auto 1.4fr auto 1fr;gap:1.2rem;align-items:stretch;
+}
+.pa-node{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:16px;
+  padding:1.3rem 1.2rem;
+  text-align:center;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.pa-node.center{
+  background:var(--col);color:#143B78;
+  border-color:var(--col);
+}
+.pa-node-tag{
+  font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.65);
+  margin-bottom:.4rem;
+}
+.pa-node.center .pa-node-tag{color:rgba(20,59,120,.6)}
+.pa-node h5{
+  font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.01em;color:var(--w);line-height:1.15;
+}
+.pa-node.center h5{color:#143B78;font-size:1.15rem}
+.pa-node .sub{
+  font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:500;
+  color:rgba(255,255,255,.7);margin-top:.5rem;line-height:1.4;
+}
+.pa-node.center .sub{color:rgba(20,59,120,.75);font-weight:600}
+
+.pa-arrow{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;min-width:90px;
+}
+.pa-arrow-label{
+  font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--col);
+  margin-bottom:.4rem;text-align:center;line-height:1.4;
+}
+.pa-arrow-line{
+  width:100%;height:2px;background:var(--col);position:relative;
+}
+.pa-arrow-line::after{
+  content:"";position:absolute;right:-1px;top:-5px;
+  border-left:10px solid var(--col);
+  border-top:6px solid transparent;border-bottom:6px solid transparent;
+}
+
+.pa-guards{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;
+  padding:0 2.5rem 2.5rem;
+}
+.pa-guard{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:12px;
+  padding:1.3rem 1.2rem;
+}
+.pa-guard-num{
+  display:inline-block;background:var(--col);color:#143B78;
+  font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:800;
+  letter-spacing:.12em;padding:.3rem .6rem;margin-bottom:.8rem;
+}
+.pa-guard h6{
+  font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.005em;color:var(--w);
+  line-height:1.25;margin-bottom:.5rem;
+}
+.pa-guard p{
+  font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:500;
+  line-height:1.6;color:rgba(255,255,255,.85);
+}
+.pa-guard p strong{color:var(--col);font-weight:700}
+
+/* ───────────────────────────────────────────────
+   SECTION 07 — Waterfall
+─────────────────────────────────────────────── */
+.wf-stage{
+  background:var(--w);
+  border-radius:28px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.06);
+  padding:2.2rem;margin-bottom:1.5rem;
+  max-width:1200px;margin-left:auto;margin-right:auto;
+}
+.wf-stage-head{
+  display:flex;align-items:baseline;gap:1.5rem;margin-bottom:1.8rem;
+}
+.wf-stage-num{
+  font-family:'Montserrat',sans-serif;font-size:2.8rem;font-weight:900;
+  letter-spacing:-.04em;color:var(--col);line-height:1;flex-shrink:0;
+}
+.wf-stage-meta{flex:1}
+.wf-stage-tag{
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:#7A7A7A;
+  margin-bottom:.4rem;
+}
+.wf-stage h4{
+  font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.02em;color:var(--k);
+  line-height:1.15;
+}
+
+/* Etapa A — Barra horizontal de cascada */
+.wf-bar{
+  display:flex;height:110px;
+  border-radius:14px;overflow:hidden;
+  margin-bottom:1.5rem;
+}
+.wf-bar-seg{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:1rem;color:var(--w);text-align:center;gap:.4rem;
+}
+.wf-bar-seg .pct{
+  font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;
+  letter-spacing:-.03em;line-height:1;
+}
+.wf-bar-seg .lbl{
+  font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:.15em;text-transform:uppercase;line-height:1.3;
+}
+.wf-bar-exh{flex:50;background:#4A4A4A}
+.wf-bar-dist{flex:30;background:#7A7A7A}
+.wf-bar-prod{flex:20;background:#143B78}
+.wf-bar-prod .lbl{color:var(--col)}
+
+.wf-note{
+  font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:500;
+  line-height:1.65;color:var(--k);
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.wf-note strong{color:#143B78;font-weight:800}
+
+/* Etapa B — Cascada vertical (waterfall del inversionista) */
+.wf-cascade{display:flex;flex-direction:column;gap:.6rem}
+.wf-step{
+  display:grid;grid-template-columns:64px 1fr auto;gap:1.4rem;
+  padding:1.4rem 1.6rem;
+  background:#F8F8F7;border-radius:14px;
+  border-left:5px solid #D9D9D9;
+  align-items:center;
+}
+.wf-step.priority{
+  background:var(--col);border-left-color:#143B78;
+}
+.wf-step .num{
+  font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:900;
+  color:#143B78;letter-spacing:-.04em;line-height:1;
+}
+.wf-step .content h5{
+  font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.01em;color:var(--k);
+  line-height:1.2;margin-bottom:.4rem;
+}
+.wf-step .content p{
+  font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:500;
+  line-height:1.6;color:var(--k);
+}
+.wf-step .content p strong{color:#143B78;font-weight:800}
+.wf-step.priority .content p strong{color:#143B78}
+.wf-step .tag{
+  font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;color:#7A7A7A;
+  align-self:center;text-align:right;
+}
+.wf-step.priority .tag{color:#143B78}
+
+/* Condiciones contractuales */
+.wf-cond{
+  background:#143B78;color:var(--w);
+  border-radius:28px;padding:2.5rem;margin-top:1.5rem;
+  max-width:1200px;margin-left:auto;margin-right:auto;
+  box-shadow:0 4px 24px rgba(0,0,0,0.06);
+}
+.wf-cond-head{margin-bottom:2rem}
+.wf-cond-eyebrow{
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;
+  letter-spacing:.25em;text-transform:uppercase;color:var(--col);
+  margin-bottom:.6rem;
+}
+.wf-cond h4{
+  font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.02em;color:var(--w);
+  line-height:1.15;
+}
+.wf-cond-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 2.5rem;
+}
+.wf-cond-item{
+  display:grid;grid-template-columns:36px 1fr;gap:1.1rem;
+  padding-top:1rem;border-top:1px solid rgba(255,255,255,.18);
+  align-items:start;
+}
+.wf-cond-num{
+  font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:800;
+  letter-spacing:.1em;color:var(--col);padding-top:2px;
+}
+.wf-cond-item h6{
+  font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.005em;color:var(--w);
+  line-height:1.25;margin-bottom:.4rem;
+}
+.wf-cond-item p{
+  font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:500;
+  line-height:1.6;color:rgba(255,255,255,.85);
+}
+.wf-cond-item p strong{color:var(--col);font-weight:700}
+
+/* ───────────────────────────────────────────────
+   SECTION 08 — Mercado secundario
+─────────────────────────────────────────────── */
+.market{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;
+  max-width:1200px;margin:0 auto;
+}
+.market-col{
+  border-radius:28px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.06);
+}
+.market-col.seller{background:#F8F8F7}
+.market-col.buyer{background:#143B78;color:var(--w)}
+
+.market-head{
+  padding:2rem 2.2rem 1.5rem;
+  border-bottom:1px solid #D9D9D9;
+}
+.market-col.buyer .market-head{border-bottom-color:rgba(255,255,255,.18)}
+.market-eyebrow{
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:#7A7A7A;
+  margin-bottom:.6rem;
+}
+.market-col.buyer .market-eyebrow{color:var(--col)}
+.market-head h4{
+  font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.02em;color:var(--k);
+  line-height:1.1;margin-bottom:.8rem;
+}
+.market-col.buyer .market-head h4{color:var(--w)}
+.market-head p{
+  font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:500;
+  line-height:1.65;color:var(--k);
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.market-col.buyer .market-head p{color:rgba(255,255,255,.82)}
+
+.market-body{padding:1.4rem 2.2rem 0.4rem}
+.market-row{
+  display:grid;grid-template-columns:1fr auto;gap:1rem;
+  padding:1rem 0;border-bottom:1px solid #D9D9D9;
+  align-items:baseline;
+}
+.market-row:last-child{border-bottom:none}
+.market-col.buyer .market-row{border-bottom-color:rgba(255,255,255,.18)}
+.market-row .lbl{
+  font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:600;color:var(--k);
+}
+.market-col.buyer .market-row .lbl{color:rgba(255,255,255,.85)}
+.market-row .val{
+  font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:900;
+  color:var(--k);letter-spacing:-.02em;
+  font-feature-settings:"tnum","lnum";
+}
+.market-col.buyer .market-row .val{color:var(--col)}
+.market-row .val .cur{
+  font-family:'Montserrat',sans-serif;font-size:.62rem;color:#7A7A7A;
+  margin-left:.4rem;font-weight:600;letter-spacing:.05em;
+}
+.market-col.buyer .market-row .val .cur{color:rgba(255,255,255,.55)}
+
+.market-foot{
+  margin-top:.4rem;padding:1.6rem 2.2rem;
+  background:var(--col);color:#143B78;
+  display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:baseline;
+}
+.market-foot .lbl{
+  font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:#143B78;
+}
+.market-foot .val{
+  font-family:'Montserrat',sans-serif;font-size:2.2rem;font-weight:900;
+  color:#143B78;letter-spacing:-.03em;
+  font-feature-settings:"tnum","lnum";
+}
+.market-foot .val .cur{
+  font-family:'Montserrat',sans-serif;font-size:.7rem;color:#143B78;opacity:.65;
+  margin-left:.4rem;font-weight:700;
+}
+
+.market-context{
+  max-width:1200px;margin:1.5rem auto 0;
+  padding:1.5rem 1.8rem;
+  background:#fffbee;border-left:4px solid var(--col);
+  font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:500;
+  color:var(--k);line-height:1.7;
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.market-context strong{color:#143B78;font-weight:800}
+.market-context .tag{
+  display:block;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:#143B78;
+  margin-bottom:.5rem;
+}
+
+/* ───────────────────────────────────────────────
+   SECTION 09 — Marco normativo (tabla legal)
+─────────────────────────────────────────────── */
+.legal-table{
+  width:100%;border-collapse:collapse;
+  background:#F8F8F7;
+  border-radius:28px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.06);
+  font-family:'Montserrat',sans-serif;
+  font-feature-settings:"tnum","lnum";
+  max-width:1200px;margin:0 auto;
+}
+.legal-table thead tr{background:#143B78}
+.legal-table thead th{
+  padding:24px 24px;text-transform:uppercase;
+  font-size:13px;font-weight:700;letter-spacing:0.08em;color:var(--w);
+  text-align:left;
+}
+.legal-table thead th.center{text-align:center;width:120px}
+.legal-table thead th.right{text-align:right;width:140px}
+.legal-table thead th + th{border-left:1px solid rgba(255,255,255,.18)}
+
+.legal-table tbody tr{border-bottom:1px solid #D9D9D9}
+.legal-table tbody tr:last-child{border-bottom:none}
+.legal-table tbody td{
+  padding:22px 24px;background:#F8F8F7;
+  vertical-align:top;
+  font-family:'Montserrat',sans-serif;
+}
+.legal-table tbody td + td{border-left:1px solid #D9D9D9}
+
+.legal-table .norma{
+  font-size:18px;font-weight:800;color:#143B78;
+  letter-spacing:-.01em;line-height:1.25;
+}
+.legal-table .norma .ref{
+  display:block;font-size:11px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;color:#7A7A7A;
+  margin-top:.45rem;
+}
+.legal-table .year{
+  text-align:center;font-size:1.6rem;font-weight:900;
+  color:#143B78;letter-spacing:-.03em;vertical-align:middle;
+}
+.legal-table .desc{
+  font-size:.95rem;font-weight:500;color:var(--k);line-height:1.65;
+}
+.legal-table .desc strong{color:#143B78;font-weight:800}
+.legal-table .ref-col{
+  text-align:right;font-size:.78rem;font-weight:700;
+  color:#143B78;letter-spacing:.05em;vertical-align:middle;
+  font-family:'Montserrat',sans-serif;
+}
+
+/* ───────────────────────────────────────────────
+   SECTION 10 — Caso trabajado (deal sheet)
+─────────────────────────────────────────────── */
+.case{
+  max-width:1200px;margin:0 auto;
+  background:#F8F8F7;border-radius:28px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.06);
+}
+.case-params{
+  background:#143B78;color:var(--w);
+  padding:2rem 2.5rem;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+}
+.case-param{padding:0 1.5rem;border-left:1px solid rgba(255,255,255,.18)}
+.case-param:first-child{border-left:none;padding-left:0}
+.case-param-lbl{
+  font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--col);
+  margin-bottom:.5rem;
+}
+.case-param-val{
+  font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;
+  color:var(--w);letter-spacing:-.02em;line-height:1;
+  font-feature-settings:"tnum","lnum";
+}
+.case-param-val .cur{
+  font-family:'Montserrat',sans-serif;font-size:.65rem;color:rgba(255,255,255,.6);
+  margin-left:.4rem;font-weight:600;letter-spacing:.05em;
+}
+.case-param-sub{
+  font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:500;
+  color:rgba(255,255,255,.78);margin-top:.4rem;
+}
+
+/* Controles interactivos del caso */
+.case-control input[type=range].case-range{
+  width:100%;-webkit-appearance:none;appearance:none;
+  height:3px;background:rgba(255,255,255,.25);outline:none;cursor:pointer;
+  margin-top:1rem;
+}
+.case-control input[type=range].case-range::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:20px;height:20px;background:var(--col);cursor:pointer;
+  border:3px solid #143B78;box-shadow:0 0 0 1px var(--col);border-radius:50%;
+}
+.case-control input[type=range].case-range::-moz-range-thumb{
+  width:20px;height:20px;background:var(--col);cursor:pointer;
+  border:3px solid #143B78;box-shadow:0 0 0 1px var(--col);border-radius:50%;
+}
+.case-range-meta{
+  display:flex;justify-content:space-between;margin-top:.5rem;
+  font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:700;
+  color:rgba(255,255,255,.5);letter-spacing:.08em;
+}
+.case-toggle{display:flex;gap:.4rem;margin-top:1rem}
+.case-toggle button{
+  flex:1;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.25);
+  cursor:pointer;padding:.55rem .6rem;
+  font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:800;
+  color:var(--w);text-transform:uppercase;letter-spacing:.05em;
+  transition:all .15s;
+}
+.case-toggle button.active{background:var(--col);border-color:var(--col);color:#143B78}
+.case-toggle button:hover:not(.active){background:rgba(255,255,255,.1)}
+
+.case-phases{padding:2.5rem}
+.case-phase{margin-bottom:2rem}
+.case-phase:last-child{margin-bottom:0}
+.case-phase-head{
+  display:flex;align-items:center;gap:1rem;margin-bottom:1rem;
+  padding-bottom:.8rem;border-bottom:2px solid #143B78;
+}
+.case-phase-num{
+  font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:900;
+  color:var(--col);letter-spacing:-.03em;line-height:1;flex-shrink:0;
+}
+.case-phase-meta{flex:1}
+.case-phase-tag{
+  font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:#7A7A7A;
+  margin-bottom:.3rem;
+}
+.case-phase h4{
+  font-family:'Montserrat',sans-serif;font-size:1.15rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.01em;color:var(--k);line-height:1.2;
+}
+.case-phase-total{
+  font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:900;
+  color:#143B78;letter-spacing:-.02em;
+  font-feature-settings:"tnum","lnum";
+}
+.case-phase-total .cur{
+  font-family:'Montserrat',sans-serif;font-size:.65rem;color:#7A7A7A;
+  margin-left:.4rem;font-weight:600;letter-spacing:.05em;
+}
+
+.case-row{
+  display:grid;grid-template-columns:1fr auto;gap:1rem;
+  padding:.9rem 0;border-bottom:1px solid #D9D9D9;align-items:baseline;
+}
+.case-row:last-child{border-bottom:none}
+.case-row .lbl{
+  font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:500;color:var(--k);
+}
+.case-row .lbl .stage{
+  display:inline-block;font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:800;
+  letter-spacing:.15em;text-transform:uppercase;color:#7A7A7A;
+  margin-right:.6rem;
+}
+.case-row .val{
+  font-family:'Montserrat',sans-serif;font-size:1.15rem;font-weight:800;
+  color:var(--k);letter-spacing:-.02em;
+  font-feature-settings:"tnum","lnum";
+}
+.case-row .val.plus{color:#1A5C38}
+.case-row .val.gold-strong{color:#143B78;font-weight:900}
+.case-row .val .cur{
+  font-family:'Montserrat',sans-serif;font-size:.62rem;color:#7A7A7A;
+  margin-left:.4rem;font-weight:600;letter-spacing:.05em;
+}
+
+.case-total-block{
+  background:var(--col);color:#143B78;
+  padding:1.8rem 2.5rem;
+  display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:baseline;
+}
+.case-total-block .lbl{
+  font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:#143B78;
+}
+.case-total-block .val{
+  font-family:'Montserrat',sans-serif;font-size:2.6rem;font-weight:900;
+  color:#143B78;letter-spacing:-.03em;line-height:1;
+  font-feature-settings:"tnum","lnum";
+}
+.case-total-block .val .cur{
+  font-family:'Montserrat',sans-serif;font-size:.85rem;color:#143B78;
+  margin-left:.5rem;font-weight:700;opacity:.7;
+}
+.case-disclaimer{
+  padding:1.4rem 2.5rem;background:#F8F8F7;
+  font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:500;
+  color:var(--k);line-height:1.65;
+  text-align:justify;text-align-last:left;hyphens:none;
+  border-top:1px solid #D9D9D9;
+}
+.case-disclaimer strong{color:#143B78;font-weight:800}
+
+/* ───────────────────────────────────────────────
+   SECTION 11 — FAQ (acordeón)
+─────────────────────────────────────────────── */
+.faq{max-width:920px;margin:0 auto}
+.faq-item{
+  border-bottom:1px solid #D9D9D9;
+}
+.faq-item:first-child{border-top:1px solid #D9D9D9}
+.faq-item summary{
+  cursor:pointer;list-style:none;
+  padding:1.6rem 0;
+  display:flex;justify-content:space-between;align-items:center;gap:1.5rem;
+  font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.005em;color:var(--k);
+  line-height:1.25;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:"+";font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:300;
+  color:#143B78;flex-shrink:0;line-height:1;transition:transform .15s;
+}
+.faq-item[open] summary::after{content:"−"}
+.faq-item summary:hover{color:#143B78}
+.faq-item .a{
+  padding:0 0 1.6rem;
+  font-family:'Montserrat',sans-serif;font-size:.98rem;font-weight:500;
+  line-height:1.75;color:var(--k);
+  max-width:780px;
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.faq-item .a strong{color:#143B78;font-weight:800}
+
+/* ───────────────────────────────────────────────
+   SECTION 12 — Garantías / Due diligence
+─────────────────────────────────────────────── */
+.dd-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;
+  max-width:1200px;margin:0 auto;
+}
+.dd-item{
+  background:#F8F8F7;border-radius:16px;
+  padding:1.6rem 1.8rem;
+  display:grid;grid-template-columns:32px 1fr;gap:1.2rem;align-items:start;
+  box-shadow:0 4px 16px rgba(0,0,0,0.04);
+}
+.dd-check{
+  width:28px;height:28px;background:#1A5C38;color:var(--w);
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;
+  flex-shrink:0;margin-top:2px;
+}
+.dd-item h5{
+  font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.005em;color:var(--k);
+  line-height:1.2;margin-bottom:.5rem;
+}
+.dd-item p{
+  font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:500;
+  line-height:1.6;color:var(--k);
+}
+.dd-item p strong{color:#143B78;font-weight:800}
+
+.dd-foot{
+  max-width:1200px;margin:2rem auto 0;
+  background:#143B78;color:var(--w);
+  border-radius:20px;padding:1.8rem 2.2rem;
+  display:flex;align-items:center;gap:1.5rem;
+}
+.dd-foot-icon{
+  width:48px;height:48px;background:var(--col);color:#143B78;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:900;
+  flex-shrink:0;
+}
+.dd-foot p{
+  font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:500;
+  line-height:1.6;color:var(--w);margin:0;
+}
+.dd-foot p strong{color:var(--col);font-weight:800}
+
+/* ───────────────────────────────────────────────
+   SECTION 13 — Glosario
+─────────────────────────────────────────────── */
+.glossary{
+  max-width:1200px;margin:0 auto;
+  background:#F8F8F7;border-radius:28px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,0.06);
+}
+.glossary-row{
+  display:grid;grid-template-columns:280px 1fr;gap:2rem;
+  padding:1.6rem 2.2rem;
+  border-bottom:1px solid #D9D9D9;
+  align-items:start;
+}
+.glossary-row:last-child{border-bottom:none}
+.glossary-term{
+  font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:.01em;color:#143B78;
+  line-height:1.3;
+}
+.glossary-term .abbr{
+  display:block;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;
+  letter-spacing:.18em;color:#7A7A7A;margin-top:.4rem;text-transform:uppercase;
+}
+.glossary-def{
+  font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:500;
+  line-height:1.7;color:var(--k);
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.glossary-def strong{color:#143B78;font-weight:800}
+
+/* ───────────────────────────────────────────────
+   CTA — Qué hace JGA + Contacto
+─────────────────────────────────────────────── */
+.cta{
+  background:#143B78;color:var(--w);
+  padding:6rem 0 5rem;
+  border-top:4px solid var(--col);
+}
+.cta-grid{
+  max-width:1200px;margin:0 auto;padding:0 2rem;
+  display:grid;grid-template-columns:1.3fr 1fr;gap:5rem;align-items:start;
+}
+.cta-eyebrow{
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;
+  letter-spacing:.25em;text-transform:uppercase;color:var(--col);
+  margin-bottom:1rem;
+}
+.cta h2{
+  font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4vw,2.8rem);
+  font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1.05;
+  color:var(--w);margin-bottom:1.5rem;
+}
+.cta h2 em{
+  font-style:normal;color:var(--col);
+  border-bottom:4px solid var(--col);padding-bottom:.05em;
+}
+.cta-lede{
+  font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:500;
+  line-height:1.7;color:rgba(255,255,255,.85);
+  max-width:580px;margin-bottom:2.5rem;
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.cta-services{display:flex;flex-direction:column;gap:1.2rem}
+.cta-service{
+  display:grid;grid-template-columns:50px 1fr;gap:1.3rem;align-items:start;
+  padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.18);
+}
+.cta-service .num{
+  font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:900;
+  color:var(--col);letter-spacing:-.03em;line-height:1;
+}
+.cta-service h5{
+  font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.005em;color:var(--w);
+  line-height:1.2;margin-bottom:.4rem;
+}
+.cta-service p{
+  font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:500;
+  line-height:1.55;color:rgba(255,255,255,.78);
+}
+
+/* Contact card */
+.contact-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.2);
+  padding:2.5rem 2.2rem;
+  border-radius:20px;
+}
+.contact-card .card-tag{
+  font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--col);
+  margin-bottom:.7rem;
+}
+.contact-card h4{
+  font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:900;
+  text-transform:uppercase;letter-spacing:-.01em;color:var(--w);
+  line-height:1.15;margin-bottom:.6rem;
+}
+.contact-card .role{
+  font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:600;
+  color:rgba(255,255,255,.75);line-height:1.5;margin-bottom:1.8rem;
+}
+.contact-row{
+  display:flex;flex-direction:column;gap:.25rem;
+  padding:1rem 0;border-top:1px solid rgba(255,255,255,.15);
+}
+.contact-row .lbl{
+  font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:800;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--col);
+}
+.contact-row a, .contact-row .val{
+  font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:700;
+  color:var(--w);text-decoration:none;
+}
+.contact-row a:hover{color:var(--col)}
+.contact-btn{
+  display:block;margin-top:1.5rem;
+  background:var(--col);color:#143B78;
+  font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;
+  padding:1rem 1.5rem;text-align:center;text-decoration:none;
+  transition:all .15s;
+}
+.contact-btn:hover{background:var(--w)}
+
+/* FOOTER */
+footer{background:#000;color:rgba(255,255,255,.55);padding:4rem 0 2.5rem}
+.footer-grid{
+  display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;
+  max-width:1200px;margin:0 auto;padding:0 2rem;
+}
+.footer-brand{display:flex;flex-direction:column;gap:.15rem}
+.footer-jga{
+  font-family:'Montserrat',sans-serif;font-weight:900;
+  font-size:3rem;letter-spacing:-.05em;color:var(--w);line-height:.9;
+}
+.footer-sub{
+  font-family:'Montserrat',sans-serif;font-weight:600;
+  font-size:.42rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);line-height:1.6;margin-top:.3rem;
+}
+.footer-meta{
+  font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:500;
+  color:rgba(255,255,255,.55);line-height:1.7;margin-top:1.5rem;
+}
+.footer-meta a{color:var(--col);text-decoration:none;font-weight:700}
+.footer-meta a:hover{text-decoration:underline}
+.footer-disclaimer{
+  font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:500;
+  line-height:1.75;color:rgba(255,255,255,.55);
+  border-left:3px solid rgba(255,255,255,.2);
+  padding-left:1.5rem;
+  text-align:justify;text-align-last:left;hyphens:none;
+}
+.footer-disclaimer strong{color:rgba(255,255,255,.85);font-weight:800}
+
+/* ───────────────────────────────────────────────
+   MOBILE
+─────────────────────────────────────────────── */
+@media(max-width:900px){
+  .wrap,.wrap-doc{padding:0 1.25rem}
+  .topbar-in{padding:.9rem 0}
+  .brand-jga{font-size:2.4rem}
+  .brand-sub{font-size:.32rem}
+  .topbar-right{padding-top:1rem}
+  .hero{padding:3rem 0 2.5rem}
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-kpi{grid-template-columns:1fr;gap:1px}
+  .kpi{padding:1.2rem}
+  .hero-title{font-size:2.4rem}
+  .section{padding:3rem 0}
+  .section-header h3{font-size:1.35rem}
+  .prose{font-size:.88rem;line-height:1.8}
+  .vprop-grid{grid-template-columns:1fr;gap:.8rem}
+  .dtable{font-size:14px;border-radius:20px}
+  .dtable thead th,.dtable tbody td{padding:16px 14px;font-size:11px}
+  .dtable tbody td.lbl{font-size:14px}
+  .dtable tr.sub td.lbl{font-size:12px}
+  .dtable .v{font-size:22px}
+  .dtable tr.delta td{padding:20px 14px}
+  .dtable tr.delta td.with .v{font-size:32px}
+  .dtable tr.delta td.right:not(.with){font-size:18px}
+  .stat-band{padding:2.5rem 0}
+  .stat-band-grid{grid-template-columns:1fr;gap:1.2rem;text-align:center}
+  .sb-label,.sb-context{text-align:center}
+  .calc{grid-template-columns:1fr;border-radius:20px}
+  .calc-inputs{border-right:none;border-bottom:1px solid #D9D9D9}
+  .calc-side{padding:1.8rem 1.5rem 2rem}
+  .calc-amount{font-size:2.2rem}
+  .calc-row.feat{margin-left:-1.5rem;margin-right:-1.5rem;padding-left:1.5rem;padding-right:1.5rem}
+  .calc-row.feat .val{font-size:1.7rem}
+  .calc-row .val{font-size:1.2rem}
+  .split{grid-template-columns:1fr;gap:1rem}
+  .split-head{padding:1.5rem 1.5rem 1.3rem}
+  .split-head h4{font-size:1.4rem}
+  .split-body{padding:.5rem 1.5rem 1.5rem}
+  .steps{grid-template-columns:1fr;gap:.8rem}
+  .step-card{padding:1.5rem}
+  .pa-block{border-radius:20px}
+  .pa-header{padding:1.8rem 1.5rem 1.2rem}
+  .pa-title{font-size:1.35rem}
+  .pa-diagram{grid-template-columns:1fr;gap:.6rem;padding:1.5rem}
+  .pa-arrow{min-width:auto;height:50px}
+  .pa-arrow-line{width:2px;height:100%}
+  .pa-arrow-line::after{
+    right:-5px;top:auto;bottom:-1px;
+    border-left:6px solid transparent;border-right:6px solid transparent;
+    border-top:10px solid var(--col);border-bottom:none;
+  }
+  .pa-arrow-label{margin-bottom:0;margin-top:.4rem;order:2}
+  .pa-arrow{flex-direction:row;gap:.8rem;align-items:center}
+  .pa-arrow .pa-arrow-label{margin:0}
+  .pa-guards{grid-template-columns:1fr 1fr;padding:0 1.5rem 1.5rem;gap:.6rem}
+  .wf-stage{padding:1.5rem;border-radius:20px}
+  .wf-stage-head{flex-direction:column;gap:.5rem;margin-bottom:1.3rem}
+  .wf-stage-num{font-size:2rem}
+  .wf-stage h4{font-size:1.15rem}
+  .wf-bar{height:auto;flex-direction:column;border-radius:14px}
+  .wf-bar-seg{padding:1rem;flex:none!important;min-height:80px}
+  .wf-step{grid-template-columns:1fr;gap:.6rem;padding:1.2rem}
+  .wf-step .num{font-size:1.6rem}
+  .wf-step .tag{text-align:left}
+  .wf-cond{padding:1.8rem 1.5rem;border-radius:20px}
+  .wf-cond h4{font-size:1.2rem}
+  .wf-cond-grid{grid-template-columns:1fr;gap:1rem}
+  .market{grid-template-columns:1fr;gap:1rem}
+  .market-head{padding:1.5rem 1.5rem 1.2rem}
+  .market-head h4{font-size:1.2rem}
+  .market-body{padding:1rem 1.5rem .3rem}
+  .market-row .val{font-size:1.15rem}
+  .market-foot{padding:1.3rem 1.5rem}
+  .market-foot .val{font-size:1.7rem}
+  .legal-table{border-radius:20px;font-size:13px}
+  .legal-table thead th,.legal-table tbody td{padding:14px 14px}
+  .legal-table thead th{font-size:11px}
+  .legal-table .norma{font-size:14px}
+  .legal-table .year{font-size:1.2rem}
+  .legal-table .desc{font-size:.82rem}
+  .case{border-radius:20px}
+  .case-params{grid-template-columns:1fr;gap:1.5rem;padding:1.5rem}
+  .case-param{padding:1.2rem 0 0 0;border-left:none;border-top:1px solid rgba(255,255,255,.18)}
+  .case-param:first-child{border-top:none;padding-top:0}
+  .case-param-val{font-size:1.4rem}
+  .case-phases{padding:1.5rem}
+  .case-phase-num{font-size:1.6rem}
+  .case-phase-total{font-size:1.15rem}
+  .case-row .val{font-size:.95rem}
+  .case-total-block{padding:1.4rem 1.5rem}
+  .case-total-block .val{font-size:1.9rem}
+  .case-disclaimer{padding:1.2rem 1.5rem;font-size:.78rem}
+  .faq-item summary{font-size:.92rem;padding:1.3rem 0}
+  .faq-item .a{font-size:.9rem}
+  .dd-grid{grid-template-columns:1fr;gap:.8rem}
+  .dd-item{padding:1.3rem 1.4rem}
+  .dd-foot{flex-direction:column;align-items:flex-start;padding:1.5rem;border-radius:16px}
+  .glossary{border-radius:20px}
+  .glossary-row{grid-template-columns:1fr;gap:.6rem;padding:1.3rem 1.5rem}
+  .glossary-term{font-size:.88rem}
+  .glossary-def{font-size:.88rem}
+  .section-lede{font-size:.85rem}
+  .cta{padding:4rem 0 3rem}
+  .cta-grid{grid-template-columns:1fr;gap:3rem;padding:0 1.5rem}
+  .cta h2{font-size:1.8rem}
+  .cta-service h5{font-size:.85rem}
+  .cta-service p{font-size:.8rem}
+  .contact-card{padding:2rem 1.8rem}
+  .contact-card h4{font-size:1.15rem}
+  .footer-grid{grid-template-columns:1fr;gap:2.5rem;padding:0 1.5rem}
+  .footer-jga{font-size:2.2rem}
+  .footer-disclaimer{padding-left:1.2rem;font-size:.72rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ TOPBAR ═══════════════════════ -->
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="#">
+      <div class="brand-jga">JGA</div>
+      <div class="brand-sub">BUSINESS · INVESTMENT<br>IP-ENTERTAINMENT LAW</div>
+    </a>
+    <div class="topbar-right">
+      <div class="lang">
+        <button data-lang="es" class="on">ES</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero">
+  <div class="wrap">
+
+    <p class="hero-eyebrow">
+      <span data-lang-show="es" class="show">Colombia · Ley 814 de 2003 · Guía para inversionistas</span>
+      <span data-lang-show="en">Colombia · Law 814 of 2003 · Investor Guide</span>
+    </p>
+
+    <div class="hero-grid">
+
+      <!-- LEFT: título + badges -->
+      <div>
+        <h1 class="hero-title">
+          <span data-lang-show="es" class="show">Ley de Cine.<br><em>Régimen de Inversión.</em></span>
+          <span data-lang-show="en">Film Law.<br><em>Investment Regime.</em></span>
+        </h1>
+        <div class="hero-tags">
+          <span class="jga-badge hi">Art. 16 · Ley 814 / 2003</span>
+          <span class="jga-badge"><span data-lang-show="es" class="show">Deducción 165%</span><span data-lang-show="en">165% Deduction</span></span>
+          <span class="jga-badge"><span data-lang-show="es" class="show">Patrimonio Autónomo</span><span data-lang-show="en">Autonomous Estate</span></span>
+          <span class="jga-badge"><span data-lang-show="es" class="show">CIC Negociable</span><span data-lang-show="en">Negotiable CIC</span></span>
+        </div>
+      </div>
+
+      <!-- RIGHT: descripción + KPI strip -->
+      <div class="hero-right">
+        <p class="hero-sub">
+          <span data-lang-show="es" class="show">La Ley de Cine estructura el fomento de la actividad cinematográfica en Colombia. Su mecanismo central permite al contribuyente <strong>deducir el 165% del valor invertido</strong> en obras nacionales reconocidas — ahorro tributario efectivo del 57,75% del capital.</span>
+          <span data-lang-show="en">The Film Law structures the development of cinematographic activity in Colombia. Its core mechanism allows taxpayers to <strong>deduct 165% of the amount invested</strong> in recognized national films — an effective tax saving of 57.75% of capital.</span>
+        </p>
+        <div class="hero-kpi">
+          <div class="kpi">
+            <div class="kpi-lbl"><span data-lang-show="es" class="show">Deducción</span><span data-lang-show="en">Deduction</span></div>
+            <div class="kpi-val"><span class="pct">165%</span></div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-lbl"><span data-lang-show="es" class="show">Ahorro</span><span data-lang-show="en">Saving</span></div>
+            <div class="kpi-val"><span class="pct">57,75%</span></div>
+          </div>
+          <div class="kpi">
+            <div class="kpi-lbl"><span data-lang-show="es" class="show">Prioridad</span><span data-lang-show="en">Priority</span></div>
+            <div class="kpi-val">120%</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ GOLD BAR ═══════════════════════ -->
+<div class="gold-bar"></div>
+
+<!-- ═══════════════════════ SECCIÓN 01 — ¿QUÉ ES LA LEY 814? ═══════════════════════ -->
+<section class="section">
+  <div class="wrap-doc">
+
+    <header class="section-header">
+      <h2>01 — <span data-lang-show="es" class="show">El régimen</span><span data-lang-show="en">The regime</span></h2>
+      <h3><span data-lang-show="es" class="show">¿Qué es la Ley 814?</span><span data-lang-show="en">What is Law 814?</span></h3>
+    </header>
+
+    <div class="prose">
+      <p data-lang-show="es" class="show">
+        La Ley 814 de 2003 — conocida como <strong>"Ley de Cine"</strong> — es la norma colombiana que estructura el fomento de la actividad cinematográfica nacional. Persigue dos objetivos: fortalecer la industria audiovisual canalizando recursos privados hacia proyectos cinematográficos colombianos, y crear un mecanismo financiero que haga económicamente atractiva la inversión en cine para el contribuyente.
+      </p>
+      <p data-lang-show="es" class="show">
+        El corazón del mecanismo está en el <strong>artículo 16</strong> de la Ley, modificado por la Ley 1607 de 2012. Permite a cualquier contribuyente del impuesto sobre la renta en Colombia que invierta en una obra cinematográfica reconocida por Mincultura <strong>deducir de su renta líquida el 165% del valor invertido</strong>. A tarifa general de renta esto equivale a un ahorro tributario del 57,75% del capital aportado — un descuento efectivo causado en el año del giro, antes incluso de que la obra se estrene.
+      </p>
+      <p data-lang-show="es" class="show">
+        Para el inversionista esto produce dos retornos independientes entre sí. El primero es <strong>tributario inmediato</strong>: el 57,75% del capital recuperado vía declaración de renta del año del aporte. El segundo es <strong>por explotación de la obra</strong>: la participación en las utilidades del proyecto cinematográfico, conforme al artículo 17 y según se pacte en el contrato de inversión.
+      </p>
+      <p data-lang-show="es" class="show">
+        Esta guía recorre el régimen en detalle: cómo se aplica el beneficio en la declaración de renta, cuánto se ahorra según el tipo de contribuyente, las diferencias entre inversión y donación, el procedimiento legal paso a paso, la estructura del waterfall de retorno, el mercado secundario de los certificados y la normativa aplicable.
+      </p>
+
+      <p data-lang-show="en">
+        Law 814 of 2003 — known as the <strong>"Film Law"</strong> — is the Colombian statute structuring the development of national cinematographic activity. It pursues two objectives: to strengthen the audiovisual industry by channeling private resources to Colombian film projects, and to create a financial mechanism that makes film investment economically attractive for taxpayers.
+      </p>
+      <p data-lang-show="en">
+        The mechanism's core is in <strong>article 16</strong>, as amended by Law 1607 of 2012. It allows any Colombian income-tax payer that invests in a film project recognized by the Ministry of Culture to <strong>deduct 165% of the invested amount from net taxable income</strong>. At the general tax rate, this equals a tax saving of 57.75% of the capital invested — an effective discount accrued in the year of disbursement, even before the film is released.
+      </p>
+      <p data-lang-show="en">
+        For the investor this produces two independent returns. The first is <strong>an immediate tax return</strong>: 57.75% of capital recovered through the tax return for the year of disbursement. The second is <strong>through film exploitation</strong>: participation in the project's profits under article 17 and as agreed in the investment contract.
+      </p>
+      <p data-lang-show="en">
+        This guide covers the regime in detail: how the benefit applies on the tax return, how much is saved depending on the type of taxpayer, the differences between investment and donation, the step-by-step legal procedure, the waterfall structure, the secondary market for certificates, and the applicable regulations.
+      </p>
+    </div>
+
+    <aside class="jga-note">
+      <span class="tag"><span data-lang-show="es" class="show">Nota técnica</span><span data-lang-show="en">Technical note</span></span>
+      <span data-lang-show="es" class="show">El régimen Ley 814 es <strong>distinto e incompatible</strong> con el CINA (Ley 1556 — incentivo a producciones extranjeras) y con CoCrea (Ley 1955/2019 art. 180 mod. Ley 2277/2022 — Corporación Colombia Crea Talento). No se acumulan ni combinan. El Art. 16 de la Ley 814 excluye además <strong>el cine publicitario y las telenovelas</strong>; los documentales sí aplican si están reconocidos por Mincultura como proyecto cinematográfico nacional.</span>
+      <span data-lang-show="en">The Law 814 regime is <strong>separate from and incompatible with</strong> CINA (Law 1556 — foreign producers incentive) and CoCrea (Law 1955/2019 art. 180 amended by Law 2277/2022 — Corporación Colombia Crea Talento). They cannot be stacked or combined. Art. 16 of Law 814 also excludes <strong>advertising film and soap operas</strong>; documentaries qualify if recognized by Mincultura as a national film project.</span>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ SECCIÓN 02 — POR QUÉ LEY 814 ═══════════════════════ -->
+<section class="section section--alt">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>02 — <span data-lang-show="es" class="show">Propuesta de valor</span><span data-lang-show="en">Value proposition</span></h2>
+      <h3><span data-lang-show="es" class="show">¿Por qué invertir bajo Ley 814?</span><span data-lang-show="en">Why invest under Law 814?</span></h3>
+    </header>
+
+    <div class="vprop-grid">
+
+      <article class="vprop-card">
+        <span class="vprop-num">01</span>
+        <h4><span data-lang-show="es" class="show">Retorno tributario inmediato</span><span data-lang-show="en">Immediate tax return</span></h4>
+        <p>
+          <span data-lang-show="es" class="show">El <strong>57,75%</strong> del capital se recupera vía declaración de renta del año del aporte — antes incluso de que la obra se estrene. Independiente del desempeño comercial de la obra y causado en el ejercicio fiscal del giro.</span>
+          <span data-lang-show="en"><strong>57.75%</strong> of capital recovered via the tax return for the year of disbursement — before the film is released. Independent of commercial performance and accrued in the tax year of the disbursement.</span>
+        </p>
+      </article>
+
+      <article class="vprop-card">
+        <span class="vprop-num">02</span>
+        <h4><span data-lang-show="es" class="show">Garantía estructural</span><span data-lang-show="en">Structural safeguard</span></h4>
+        <p>
+          <span data-lang-show="es" class="show">El capital del inversionista <strong>nunca va al productor</strong>: se gira a un patrimonio autónomo administrado por sociedad fiduciaria, blindado frente a los acreedores del productor por la fiducia mercantil (Art. 1226 C.Co.).</span>
+          <span data-lang-show="en">The investor's capital <strong>never goes to the producer</strong>: it is transferred to an autonomous estate managed by a trustee, shielded from the producer's creditors via the commercial trust (Art. 1226 Code of Commerce).</span>
+        </p>
+      </article>
+
+      <article class="vprop-card">
+        <span class="vprop-num">03</span>
+        <h4><span data-lang-show="es" class="show">Prioridad contractual</span><span data-lang-show="en">Contractual priority</span></h4>
+        <p>
+          <span data-lang-show="es" class="show">El contrato típico de inversión pacta <strong>prioridad de recuperación hasta el 120%</strong> de la inversión sobre los ingresos de la obra — un 20% adicional al 57,75% tributario. No es garantía de pago: depende del desempeño comercial.</span>
+          <span data-lang-show="en">The typical investment contract sets <strong>recovery priority up to 120%</strong> of the investment from the film's revenue — an additional 20% above the 57.75% tax saving. Not a payment guarantee: depends on commercial performance.</span>
+        </p>
+      </article>
+
+      <article class="vprop-card">
+        <span class="vprop-num">04</span>
+        <h4><span data-lang-show="es" class="show">CIC negociable</span><span data-lang-show="en">Negotiable CIC</span></h4>
+        <p>
+          <span data-lang-show="es" class="show">El Certificado de Inversión Cinematográfica es <strong>título a la orden negociable</strong> (Art. 17 Ley 814). Mercado secundario típicamente al 40% del valor nominal — opción de liquidez si el inversionista no aprovecha la deducción.</span>
+          <span data-lang-show="en">The Film Investment Certificate is a <strong>negotiable order instrument</strong> (Art. 17 Law 814). Secondary market typically at 40% of nominal value — a liquidity option if the investor cannot use the deduction.</span>
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SECCIÓN 03 — DECLARACIÓN DE RENTA ═══════════════════════ -->
+<section class="section">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>03 — <span data-lang-show="es" class="show">Declaración de renta</span><span data-lang-show="en">Tax return</span></h2>
+      <h3><span data-lang-show="es" class="show">Cómo se aplica el beneficio</span><span data-lang-show="en">How the benefit applies</span></h3>
+    </header>
+
+    <p class="section-lede">
+      <span data-lang-show="es" class="show">El beneficio no es un descuento contra el impuesto. Es una <strong>deducción de la renta líquida</strong>: reduce la base sobre la cual se calcula el impuesto. A continuación una declaración simplificada de una persona jurídica con ingresos netos de COP 5.000 millones, comparada en dos escenarios — sin inversión en cine y con inversión de COP 100 millones en una obra cinematográfica reconocida por Mincultura. La diferencia entre las dos columnas finales es el ahorro tributario.</span>
+      <span data-lang-show="en">The benefit is not a tax credit. It is a <strong>deduction from net taxable income</strong>: it reduces the base on which the tax is computed. Below is a simplified return for a corporation with net revenue of COP 5 billion, compared in two scenarios — without film investment and with a COP 100 million investment in a film recognized by the Ministry of Culture. The difference between the final columns is the tax saving.</span>
+    </p>
+
+    <table class="dtable">
+      <thead>
+        <tr>
+          <th><span data-lang-show="es" class="show">Declaración de renta — escenarios comparados</span><span data-lang-show="en">Tax return — compared scenarios</span></th>
+          <th class="right"><span data-lang-show="es" class="show">Sin inversión en cine</span><span data-lang-show="en">No film investment</span></th>
+          <th class="right with"><span data-lang-show="es" class="show">Con inversión en cine</span><span data-lang-show="en">With film investment</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="lbl"><span data-lang-show="es" class="show">Total Ingresos Netos</span><span data-lang-show="en">Total Net Revenue</span></td>
+          <td class="right"><span class="v">5.000</span><span class="cur">COP M</span></td>
+          <td class="right with"><span class="v">5.000</span><span class="cur">COP M</span></td>
+        </tr>
+        <tr>
+          <td class="lbl"><span data-lang-show="es" class="show">Inversión en películas</span><span data-lang-show="en">Investment in films</span></td>
+          <td class="right">—</td>
+          <td class="right with"><span class="v">100</span><span class="cur">COP M</span></td>
+        </tr>
+        <tr class="hl">
+          <td class="lbl"><span data-lang-show="es" class="show">Inversión × 165% — deducción Ley 814</span><span data-lang-show="en">Investment × 165% — Law 814 deduction</span></td>
+          <td class="right">—</td>
+          <td class="right with"><span class="v">165</span><span class="cur">COP M</span></td>
+        </tr>
+        <tr class="sub">
+          <td class="lbl"><span data-lang-show="es" class="show">Total Costos y Gastos Deducibles</span><span data-lang-show="en">Total Deductible Costs and Expenses</span></td>
+          <td class="right"><span class="v">(3.000)</span><span class="cur">COP M</span></td>
+          <td class="right with"><span class="v">(3.165)</span><span class="cur">COP M</span></td>
+        </tr>
+        <tr class="sub">
+          <td class="lbl"><span data-lang-show="es" class="show">Renta Líquida Gravable</span><span data-lang-show="en">Net Taxable Income</span></td>
+          <td class="right"><span class="v">2.000</span><span class="cur">COP M</span></td>
+          <td class="right with"><span class="v">1.835</span><span class="cur">COP M</span></td>
+        </tr>
+        <tr>
+          <td class="lbl"><span data-lang-show="es" class="show">× Tarifa General de Renta</span><span data-lang-show="en">× General income tax rate</span></td>
+          <td class="right"><span class="v">× 35%</span></td>
+          <td class="right with"><span class="v">× 35%</span></td>
+        </tr>
+        <tr class="sub">
+          <td class="lbl"><span data-lang-show="es" class="show">Impuesto de renta a pagar</span><span data-lang-show="en">Income tax payable</span></td>
+          <td class="right"><span class="v">700</span><span class="cur">COP M</span></td>
+          <td class="right with"><span class="v">642,25</span><span class="cur">COP M</span></td>
+        </tr>
+        <tr class="delta">
+          <td class="lbl"><span data-lang-show="es" class="show">Ahorro por Ley 814</span><span data-lang-show="en">Savings under Law 814</span></td>
+          <td class="right">—</td>
+          <td class="right with"><span class="v">57,75</span><span class="cur">COP M</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STAT BAND ═══════════════════════ -->
+<div class="stat-band">
+  <div class="stat-band-grid">
+    <div class="sb-label">
+      <span data-lang-show="es" class="show">Descuento efectivo sobre capital invertido</span>
+      <span data-lang-show="en">Effective discount on capital invested</span>
+    </div>
+    <div class="sb-value">57,75%</div>
+    <div class="sb-context">
+      <span data-lang-show="es" class="show">A tarifa general de renta (35%). Sube a <strong>66%</strong> en entidades financieras (40%) por los 5 puntos adicionales de la Ley 2277 de 2022.</span>
+      <span data-lang-show="en">At the general income tax rate (35%). Rises to <strong>66%</strong> for financial institutions (40%) under the additional 5 points of Law 2277 of 2022.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SECCIÓN 04 — CALCULADORA ═══════════════════════ -->
+<section class="section section--alt">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>04 — <span data-lang-show="es" class="show">Calculadora</span><span data-lang-show="en">Calculator</span></h2>
+      <h3><span data-lang-show="es" class="show">Su caso, en números</span><span data-lang-show="en">Your case, in numbers</span></h3>
+    </header>
+
+    <p class="section-lede">
+      <span data-lang-show="es" class="show">Seleccione el tipo de contribuyente y el monto de la inversión. Las cifras se actualizan en vivo y reflejan el mismo cálculo de la declaración de renta mostrado arriba.</span>
+      <span data-lang-show="en">Select taxpayer type and investment amount. Figures update in real time, mirroring the same calculation shown in the tax return above.</span>
+    </p>
+
+    <div class="calc">
+
+      <!-- INPUTS (izquierda) -->
+      <div class="calc-side calc-inputs">
+        <p class="calc-eyebrow">A · <span data-lang-show="es" class="show">Parámetros</span><span data-lang-show="en">Inputs</span></p>
+        <h4><span data-lang-show="es" class="show">¿Quién invierte y cuánto?</span><span data-lang-show="en">Who invests, and how much?</span></h4>
+
+        <div class="calc-field">
+          <div class="calc-field-label">
+            <span><span data-lang-show="es" class="show">Monto de la inversión</span><span data-lang-show="en">Investment amount</span></span>
+            <span>COP M</span>
+          </div>
+          <div class="calc-amount"><span id="amt-display">500</span><span class="cur">COP M</span></div>
+          <input type="range" id="amt" min="50" max="5000" step="50" value="500">
+          <div class="range-meta"><span>COP 50M</span><span>COP 5.000M</span></div>
+        </div>
+
+        <div class="calc-field">
+          <div class="calc-field-label"><span data-lang-show="es" class="show">Tipo de contribuyente</span><span data-lang-show="en">Taxpayer type</span></div>
+          <div class="calc-toggle">
+            <button data-rate="0.35" class="active">
+              <div>
+                <span class="name"><span data-lang-show="es" class="show">Tarifa General de Renta</span><span data-lang-show="en">General income tax rate</span></span>
+                <span class="descrip"><span data-lang-show="es" class="show">Personas jurídicas — régimen general</span><span data-lang-show="en">Corporations — general regime</span></span>
+              </div>
+              <span class="rate">35%</span>
+            </button>
+            <button data-rate="0.40">
+              <div>
+                <span class="name"><span data-lang-show="es" class="show">Entidad financiera</span><span data-lang-show="en">Financial institution</span></span>
+                <span class="descrip"><span data-lang-show="es" class="show">35% + 5 pts · Ley 2277/2022 (2023–2027)</span><span data-lang-show="en">35% + 5 pts · Law 2277/2022 (2023–2027)</span></span>
+              </div>
+              <span class="rate">40%</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- OUTPUTS (derecha) -->
+      <div class="calc-side calc-outputs">
+        <p class="calc-eyebrow">B · <span data-lang-show="es" class="show">Resultado</span><span data-lang-show="en">Result</span></p>
+        <h4><span data-lang-show="es" class="show">Lo que recibe</span><span data-lang-show="en">What you receive</span></h4>
+
+        <div class="calc-row">
+          <span class="lbl"><span data-lang-show="es" class="show">Deducción · 165%</span><span data-lang-show="en">Deduction · 165%</span></span>
+          <span class="val"><span id="out-ded">825</span><span class="cur">COP M</span></span>
+        </div>
+        <div class="calc-row">
+          <span class="lbl"><span data-lang-show="es" class="show">Ahorro tributario</span><span data-lang-show="en">Tax saving</span></span>
+          <span class="val"><span id="out-save">288,75</span><span class="cur">COP M</span></span>
+        </div>
+        <div class="calc-row">
+          <span class="lbl"><span data-lang-show="es" class="show">Descuento efectivo</span><span data-lang-show="en">Effective discount</span></span>
+          <span class="val"><span id="out-pct">57,75%</span></span>
+        </div>
+        <div class="calc-row feat">
+          <span class="lbl"><span data-lang-show="es" class="show">Costo neto</span><span data-lang-show="en">Net cost</span></span>
+          <span class="val"><span id="out-net">211,25</span><span class="cur">COP M</span></span>
+        </div>
+        <div class="calc-row">
+          <span class="lbl"><span data-lang-show="es" class="show">CIC · valor nominal</span><span data-lang-show="en">CIC · nominal value</span></span>
+          <span class="val"><span id="out-cic">500</span><span class="cur">COP M</span></span>
+        </div>
+
+        <p class="calc-foot">
+          <span data-lang-show="es" class="show"><strong>Ahorro</strong> = inversión × 165% × tarifa. <strong>Costo neto</strong> = inversión − ahorro tributario. El CIC conserva su valor nominal y es título a la orden negociable (Art. 17 Ley 814). La participación en utilidades es paralela al beneficio tributario y se rige por el contrato de inversión.</span>
+          <span data-lang-show="en"><strong>Saving</strong> = investment × 165% × rate. <strong>Net cost</strong> = investment − tax saving. The CIC retains its nominal value and is a negotiable order instrument (Art. 17 Law 814). Revenue participation is parallel to the tax benefit and governed by the investment contract.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SECCIÓN 05 — INVERSIÓN VS DONACIÓN ═══════════════════════ -->
+<section class="section">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>05 — <span data-lang-show="es" class="show">La elección estructural</span><span data-lang-show="en">Structural choice</span></h2>
+      <h3><span data-lang-show="es" class="show">Inversión vs Donación</span><span data-lang-show="en">Investment vs Donation</span></h3>
+    </header>
+
+    <p class="section-lede">
+      <span data-lang-show="es" class="show">El artículo 16 de la Ley 814 admite dos figuras jurídicas: <strong>inversión</strong> y <strong>donación</strong>. Ambas generan el mismo beneficio tributario del 165%. La diferencia es estrictamente económica: solo la inversión conserva los derechos económicos sobre la explotación de la obra y la negociabilidad del certificado. Para un perfil de inversionista la elección siempre es inversión.</span>
+      <span data-lang-show="en">Article 16 of Law 814 allows two legal figures: <strong>investment</strong> and <strong>donation</strong>. Both generate the same 165% tax benefit. The difference is purely economic: only investment retains economic rights over film exploitation and the certificate's negotiability. For an investor profile, the choice is always investment.</span>
+    </p>
+
+    <div class="split">
+
+      <!-- Columna INVERSIÓN -->
+      <article class="split-col">
+        <div class="split-head">
+          <p class="lbl"><span data-lang-show="es" class="show">Figura recomendada</span><span data-lang-show="en">Recommended figure</span></p>
+          <h4><span data-lang-show="es" class="show">Inversión</span><span data-lang-show="en">Investment</span></h4>
+          <p><span data-lang-show="es" class="show">Conserva los derechos económicos completos sobre la obra y permite la negociación del certificado en mercado secundario.</span><span data-lang-show="en">Retains full economic rights over the film and allows certificate trading in the secondary market.</span></p>
+        </div>
+        <div class="split-body">
+          <div class="split-row">
+            <span class="split-icon yes">✓</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>Deducción 165%</strong> en renta líquida (Art. 16 Ley 814)</span><span data-lang-show="en"><strong>165% deduction</strong> from net taxable income (Art. 16 Law 814)</span></span>
+          </div>
+          <div class="split-row">
+            <span class="split-icon yes">✓</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>Ahorro tributario 57,75%</strong> sobre el capital · 66% en entidades financieras</span><span data-lang-show="en"><strong>57.75% tax saving</strong> on capital · 66% for financial institutions</span></span>
+          </div>
+          <div class="split-row">
+            <span class="split-icon yes">✓</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>CIC negociable</strong> a nombre del inversionista — título a la orden, mercado secundario al 40% nominal (Art. 17)</span><span data-lang-show="en"><strong>Negotiable CIC</strong> issued in the investor's name — order instrument, secondary market at 40% nominal (Art. 17)</span></span>
+          </div>
+          <div class="split-row">
+            <span class="split-icon yes">✓</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>Participación en utilidades</strong> por explotación de la obra (Art. 17)</span><span data-lang-show="en"><strong>Revenue participation</strong> from film exploitation (Art. 17)</span></span>
+          </div>
+          <div class="split-row">
+            <span class="split-icon yes">✓</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>Prioridad contractual</strong> de recuperación hasta el 120% del aporte</span><span data-lang-show="en"><strong>Contractual priority</strong> of recovery up to 120% of the contribution</span></span>
+          </div>
+          <div class="split-row">
+            <span class="split-icon yes">✓</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>Patrimonio autónomo</strong> · fiducia mercantil — capital blindado de acreedores del productor</span><span data-lang-show="en"><strong>Autonomous estate</strong> · commercial trust — capital shielded from producer's creditors</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Columna DONACIÓN -->
+      <article class="split-col muted">
+        <div class="split-head">
+          <p class="lbl"><span data-lang-show="es" class="show">Figura alternativa</span><span data-lang-show="en">Alternative figure</span></p>
+          <h4><span data-lang-show="es" class="show">Donación</span><span data-lang-show="en">Donation</span></h4>
+          <p><span data-lang-show="es" class="show">Mismo beneficio tributario, pero sin derechos económicos sobre la obra ni negociabilidad del certificado.</span><span data-lang-show="en">Same tax benefit, but no economic rights over the film and no certificate negotiability.</span></p>
+        </div>
+        <div class="split-body">
+          <div class="split-row">
+            <span class="split-icon yes">✓</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>Deducción 165%</strong> en renta líquida (Art. 16 Ley 814)</span><span data-lang-show="en"><strong>165% deduction</strong> from net taxable income (Art. 16 Law 814)</span></span>
+          </div>
+          <div class="split-row">
+            <span class="split-icon yes">✓</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>Ahorro tributario 57,75%</strong> sobre el capital · 66% en entidades financieras</span><span data-lang-show="en"><strong>57.75% tax saving</strong> on capital · 66% for financial institutions</span></span>
+          </div>
+          <div class="split-row">
+            <span class="split-icon no">✗</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>CDC no negociable</strong> — el certificado de donación no es título valor (Art. 17 limita negociabilidad solo a CIC)</span><span data-lang-show="en"><strong>Non-negotiable CDC</strong> — the donation certificate is not a negotiable instrument (Art. 17 limits negotiability to CIC only)</span></span>
+          </div>
+          <div class="split-row">
+            <span class="split-icon no">✗</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>Sin participación</strong> en utilidades por explotación</span><span data-lang-show="en"><strong>No participation</strong> in exploitation revenue</span></span>
+          </div>
+          <div class="split-row">
+            <span class="split-icon no">✗</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>Sin prioridad</strong> de recuperación contractual</span><span data-lang-show="en"><strong>No contractual priority</strong> of recovery</span></span>
+          </div>
+          <div class="split-row">
+            <span class="split-icon yes">✓</span>
+            <span class="split-text"><span data-lang-show="es" class="show"><strong>Patrimonio autónomo</strong> · fiducia mercantil — capital blindado de acreedores del productor</span><span data-lang-show="en"><strong>Autonomous estate</strong> · commercial trust — capital shielded from producer's creditors</span></span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="split-foot" style="max-width:1200px;margin:1.5rem auto 0">
+      <span data-lang-show="es" class="show"><strong>Conclusión.</strong> Mismo ahorro tributario en ambas figuras. La diferencia económica es el retorno por explotación: la inversión lo conserva, la donación lo cede. Para perfiles inversionistas se estructura siempre como inversión.</span>
+      <span data-lang-show="en"><strong>Conclusion.</strong> Same tax saving under both figures. The economic difference is the exploitation return: investment retains it, donation forgoes it. For investor profiles, the structure is always investment.</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ SECCIÓN 06 — EL MECANISMO ═══════════════════════ -->
+<section class="section section--alt">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>06 — <span data-lang-show="es" class="show">El mecanismo</span><span data-lang-show="en">The mechanism</span></h2>
+      <h3><span data-lang-show="es" class="show">Cómo funciona, paso a paso</span><span data-lang-show="en">How it works, step by step</span></h3>
+    </header>
+
+    <p class="section-lede">
+      <span data-lang-show="es" class="show">El régimen Ley 814 opera mediante un procedimiento reglado que vincula al inversionista, al productor, a una sociedad fiduciaria y al Ministerio de Cultura — a través de la Dirección de Audiovisuales, Cine y Medios Interactivos (DACMI). El núcleo estructural es el <strong>patrimonio autónomo</strong>: el capital del inversionista nunca pasa por el patrimonio del productor.</span>
+      <span data-lang-show="en">The Law 814 regime operates through a regulated procedure linking the investor, the producer, a trustee company and the Ministry of Culture — via the Directorate of Audiovisual, Cinema and Interactive Media (DACMI). The structural core is the <strong>autonomous estate</strong>: the investor's capital never passes through the producer's patrimony.</span>
+    </p>
+
+    <div class="steps">
+
+      <article class="step-card">
+        <div class="step-head">
+          <span class="step-num">01</span>
+          <span class="step-tag"><span data-lang-show="es" class="show">Reconocimiento</span><span data-lang-show="en">Recognition</span></span>
+        </div>
+        <h4><span data-lang-show="es" class="show">Reconocimiento del proyecto</span><span data-lang-show="en">Project recognition</span></h4>
+        <p><span data-lang-show="es" class="show">El productor presenta la obra ante <strong>DACMI · Mincultura</strong> para reconocimiento como proyecto cinematográfico nacional. Sin este reconocimiento la inversión no califica para el beneficio tributario.</span><span data-lang-show="en">The producer submits the film to <strong>DACMI · Ministry of Culture</strong> for recognition as a national cinematographic project. Without this recognition the investment does not qualify for the tax benefit.</span></p>
+        <div class="step-foot"><span data-lang-show="es" class="show">Plazo · 15 días hábiles<br>+ 10 si aclaraciones</span><span data-lang-show="en">Term · 15 business days<br>+ 10 if clarifications</span></div>
+      </article>
+
+      <article class="step-card">
+        <div class="step-head">
+          <span class="step-num">02</span>
+          <span class="step-tag"><span data-lang-show="es" class="show">Contrato</span><span data-lang-show="en">Contract</span></span>
+        </div>
+        <h4><span data-lang-show="es" class="show">Contrato de inversión</span><span data-lang-show="en">Investment contract</span></h4>
+        <p><span data-lang-show="es" class="show">Inversionista, productor y fiduciaria suscriben el contrato. Define <strong>monto, prioridad de recuperación hasta el 120%</strong>, plazos, participación en utilidades y reglas del waterfall. El inversionista nunca es productor ni coproductor.</span><span data-lang-show="en">Investor, producer and trustee sign the contract. Defines <strong>amount, recovery priority up to 120%</strong>, terms, revenue participation and waterfall rules. The investor is never producer or co-producer.</span></p>
+        <div class="step-foot"><span data-lang-show="es" class="show">Documento privado<br>tres partes</span><span data-lang-show="en">Private document<br>three parties</span></div>
+      </article>
+
+      <article class="step-card">
+        <div class="step-head">
+          <span class="step-num">03</span>
+          <span class="step-tag"><span data-lang-show="es" class="show">Fiducia</span><span data-lang-show="en">Trust</span></span>
+        </div>
+        <h4><span data-lang-show="es" class="show">Patrimonio autónomo</span><span data-lang-show="en">Autonomous estate</span></h4>
+        <p><span data-lang-show="es" class="show">La sociedad fiduciaria constituye el <strong>patrimonio autónomo</strong> bajo fiducia mercantil — vehículo separado del patrimonio del productor, blindado de sus acreedores. Recibe y administra el capital del inversionista.</span><span data-lang-show="en">The trustee constitutes the <strong>autonomous estate</strong> under commercial trust — a vehicle separate from the producer's patrimony, shielded from its creditors. Receives and manages the investor's capital.</span></p>
+        <div class="step-foot"><span data-lang-show="es" class="show">Art. 1226 Código de Comercio</span><span data-lang-show="en">Art. 1226 Code of Commerce</span></div>
+      </article>
+
+      <article class="step-card">
+        <div class="step-head">
+          <span class="step-num">04</span>
+          <span class="step-tag"><span data-lang-show="es" class="show">Giro</span><span data-lang-show="en">Disbursement</span></span>
+        </div>
+        <h4><span data-lang-show="es" class="show">Giro del capital</span><span data-lang-show="en">Capital transfer</span></h4>
+        <p><span data-lang-show="es" class="show">El inversionista gira el capital al patrimonio autónomo mediante <strong>transferencia electrónica bancarizada</strong> — requisito de trazabilidad para certificar la fecha del desembolso. El año tributario aplicable corresponde al año del giro, no al de la firma del contrato.</span><span data-lang-show="en">The investor transfers capital to the autonomous estate via <strong>bank wire transfer</strong> — a traceability requirement to certify the disbursement date. The applicable tax year corresponds to the year of the transfer, not the contract signing year.</span></p>
+        <div class="step-foot"><span data-lang-show="es" class="show">Art. 16 Ley 814<br>DIAN Of. 411/002083</span><span data-lang-show="en">Art. 16 Law 814<br>DIAN Op. 411/002083</span></div>
+      </article>
+
+      <article class="step-card">
+        <div class="step-head">
+          <span class="step-num">05</span>
+          <span class="step-tag">CIC</span>
+        </div>
+        <h4><span data-lang-show="es" class="show">Emisión del Certificado</span><span data-lang-show="en">Certificate issuance</span></h4>
+        <p><span data-lang-show="es" class="show">Verificado el giro, <strong>DACMI · Mincultura</strong> emite el Certificado de Inversión Cinematográfica (CIC) a nombre del inversionista. Es <strong>título a la orden negociable</strong> (Art. 17 Ley 814).</span><span data-lang-show="en">Once disbursement is verified, <strong>DACMI · Ministry of Culture</strong> issues the Film Investment Certificate (CIC) in the investor's name. It is a <strong>negotiable order instrument</strong> (Art. 17 Law 814).</span></p>
+        <div class="step-foot"><span data-lang-show="es" class="show">Título a la orden · Art. 17</span><span data-lang-show="en">Order instrument · Art. 17</span></div>
+      </article>
+
+      <article class="step-card">
+        <div class="step-head">
+          <span class="step-num">06</span>
+          <span class="step-tag"><span data-lang-show="es" class="show">Tributación</span><span data-lang-show="en">Tax filing</span></span>
+        </div>
+        <h4><span data-lang-show="es" class="show">Aplicación tributaria</span><span data-lang-show="en">Tax application</span></h4>
+        <p><span data-lang-show="es" class="show">En la declaración de renta del año del giro, el inversionista incluye la <strong>deducción del 165%</strong> en la casilla 66 del Formulario 110. Causa el ahorro tributario del 57,75% — 66% para entidades financieras.</span><span data-lang-show="en">In the tax return for the year of disbursement, the investor reports the <strong>165% deduction</strong> in box 66 of Form 110. Triggers the 57.75% tax saving — 66% for financial institutions.</span></p>
+        <div class="step-foot"><span data-lang-show="es" class="show">Casilla 66 · Formulario 110<br>DIAN Of. 28376/2019</span><span data-lang-show="en">Box 66 · Form 110<br>DIAN Op. 28376/2019</span></div>
+      </article>
+
+    </div>
+
+    <!-- ─── Patrimonio Autónomo block con diagrama ─── -->
+    <div class="pa-block">
+      <div class="pa-header">
+        <p class="pa-eyebrow"><span data-lang-show="es" class="show">El núcleo de la garantía estructural</span><span data-lang-show="en">The core of structural protection</span></p>
+        <h4 class="pa-title"><span data-lang-show="es" class="show">Patrimonio Autónomo · Fiducia Mercantil</span><span data-lang-show="en">Autonomous Estate · Commercial Trust</span></h4>
+        <p class="pa-lede">
+          <span data-lang-show="es" class="show">El capital del inversionista <strong>nunca se entrega al productor</strong>. Se gira a un patrimonio autónomo administrado por sociedad fiduciaria — un vehículo legal separado, con personalidad propia bajo el Art. 1226 del Código de Comercio.</span>
+          <span data-lang-show="en">The investor's capital <strong>is never delivered to the producer</strong>. It is transferred to an autonomous estate managed by a trustee company — a separate legal vehicle with its own legal personality under Art. 1226 of the Code of Commerce.</span>
+        </p>
+      </div>
+
+      <!-- Diagrama de flujo -->
+      <div class="pa-diagram">
+        <div class="pa-node">
+          <div class="pa-node-tag">01</div>
+          <h5><span data-lang-show="es" class="show">Inversionista</span><span data-lang-show="en">Investor</span></h5>
+          <div class="sub"><span data-lang-show="es" class="show">Persona jurídica<br>o natural</span><span data-lang-show="en">Legal entity<br>or individual</span></div>
+        </div>
+
+        <div class="pa-arrow">
+          <span class="pa-arrow-label"><span data-lang-show="es" class="show">Giro<br>transferencia</span><span data-lang-show="en">Wire<br>transfer</span></span>
+          <span class="pa-arrow-line"></span>
+        </div>
+
+        <div class="pa-node center">
+          <div class="pa-node-tag">02 · <span data-lang-show="es" class="show">Núcleo</span><span data-lang-show="en">Core</span></div>
+          <h5><span data-lang-show="es" class="show">Patrimonio Autónomo</span><span data-lang-show="en">Autonomous Estate</span></h5>
+          <div class="sub"><span data-lang-show="es" class="show">Administra: Sociedad Fiduciaria<br>Art. 1226 C.Co.</span><span data-lang-show="en">Managed by: Trustee Company<br>Art. 1226 Code of Commerce</span></div>
+        </div>
+
+        <div class="pa-arrow">
+          <span class="pa-arrow-label"><span data-lang-show="es" class="show">Desembolsos<br>según OF</span><span data-lang-show="en">Disbursements<br>per budget</span></span>
+          <span class="pa-arrow-line"></span>
+        </div>
+
+        <div class="pa-node">
+          <div class="pa-node-tag">03</div>
+          <h5><span data-lang-show="es" class="show">Productor</span><span data-lang-show="en">Producer</span></h5>
+          <div class="sub"><span data-lang-show="es" class="show">Recibe fondos<br>contra ejecución</span><span data-lang-show="en">Receives funds<br>against execution</span></div>
+        </div>
+      </div>
+
+      <!-- 4 cards de garantías -->
+      <div class="pa-guards">
+        <div class="pa-guard">
+          <span class="pa-guard-num">01</span>
+          <h6><span data-lang-show="es" class="show">Separación patrimonial</span><span data-lang-show="en">Patrimonial separation</span></h6>
+          <p><span data-lang-show="es" class="show">El patrimonio autónomo tiene <strong>personalidad jurídica propia</strong>. No se confunde con el patrimonio del productor ni con el de la fiduciaria.</span><span data-lang-show="en">The autonomous estate has <strong>its own legal personality</strong>. It is not commingled with the producer's or the trustee's patrimony.</span></p>
+        </div>
+        <div class="pa-guard">
+          <span class="pa-guard-num">02</span>
+          <h6><span data-lang-show="es" class="show">Blindaje frente a acreedores</span><span data-lang-show="en">Shield from creditors</span></h6>
+          <p><span data-lang-show="es" class="show">Los bienes en el patrimonio autónomo <strong>no responden por las obligaciones</strong> del productor. Inembargables por sus acreedores.</span><span data-lang-show="en">Assets in the autonomous estate <strong>do not respond for the producer's obligations</strong>. Non-attachable by its creditors.</span></p>
+        </div>
+        <div class="pa-guard">
+          <span class="pa-guard-num">03</span>
+          <h6><span data-lang-show="es" class="show">Administración profesional</span><span data-lang-show="en">Professional management</span></h6>
+          <p><span data-lang-show="es" class="show">La <strong>sociedad fiduciaria</strong>, vigilada por la Superintendencia Financiera, administra los recursos conforme al contrato de fiducia.</span><span data-lang-show="en">The <strong>trustee company</strong>, supervised by the Financial Superintendence, manages resources under the trust agreement.</span></p>
+        </div>
+        <div class="pa-guard">
+          <span class="pa-guard-num">04</span>
+          <h6><span data-lang-show="es" class="show">Desembolsos controlados</span><span data-lang-show="en">Controlled disbursements</span></h6>
+          <p><span data-lang-show="es" class="show">El productor <strong>solo recibe los fondos contra ejecución</strong> documentada del plan de inversión y del presupuesto aprobado.</span><span data-lang-show="en">The producer <strong>only receives funds against documented execution</strong> of the investment plan and approved budget.</span></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ SECCIÓN 07 — WATERFALL ═══════════════════════ -->
+<section class="section">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>07 — Waterfall</h2>
+      <h3><span data-lang-show="es" class="show">Cómo se distribuyen los ingresos</span><span data-lang-show="en">How revenue is distributed</span></h3>
+    </header>
+
+    <p class="section-lede">
+      <span data-lang-show="es" class="show">Los ingresos de una obra cinematográfica pasan por una cascada en dos niveles. Primero, la <strong>distribución general</strong> entre exhibidor, distribuidor y productor. Después, dentro del bucket del productor, el <strong>waterfall específico</strong> del contrato de inversión Ley 814: el inversionista recupera primero el 57,75% vía tributación, luego el 42,25% restante hasta cubrir el 100% del capital, y un premium del 20% adicional — completando la prioridad contractual del 120%.</span>
+      <span data-lang-show="en">A film's revenue flows through a two-level cascade. First, the <strong>general distribution</strong> among exhibitor, distributor and producer. Then, within the producer's bucket, the <strong>specific waterfall</strong> of the Law 814 investment contract: the investor recoups first 57.75% via tax, then the remaining 42.25% up to 100% of capital, and an additional 20% premium — completing the 120% contractual priority.</span>
+    </p>
+
+    <!-- ETAPA A: Cascada general -->
+    <div class="wf-stage">
+      <div class="wf-stage-head">
+        <span class="wf-stage-num">A</span>
+        <div class="wf-stage-meta">
+          <p class="wf-stage-tag"><span data-lang-show="es" class="show">Cascada general · escenario teórico</span><span data-lang-show="en">General cascade · theoretical scenario</span></p>
+          <h4><span data-lang-show="es" class="show">De la taquilla al productor</span><span data-lang-show="en">From box office to producer</span></h4>
+        </div>
+      </div>
+
+      <div class="wf-bar">
+        <div class="wf-bar-seg wf-bar-exh" style="flex:50">
+          <span class="pct">50%</span>
+          <span class="lbl"><span data-lang-show="es" class="show">Exhibidor · Sala</span><span data-lang-show="en">Exhibitor · Theatre</span></span>
+        </div>
+        <div class="wf-bar-seg wf-bar-dist" style="flex:10">
+          <span class="pct">10%</span>
+          <span class="lbl"><span data-lang-show="es" class="show">Distribuidor + P&amp;A</span><span data-lang-show="en">Distributor + P&amp;A</span></span>
+        </div>
+        <div class="wf-bar-seg wf-bar-prod" style="flex:40">
+          <span class="pct">40%</span>
+          <span class="lbl"><span data-lang-show="es" class="show">Productor</span><span data-lang-show="en">Producer</span></span>
+        </div>
+      </div>
+
+      <p class="wf-note">
+        <span data-lang-show="es" class="show">Estas cifras corresponden a un <strong>escenario teórico</strong> de taquilla doméstica colombiana — donde la sala se queda con cerca del 50%, el distribuidor descuenta su comisión y recupera P&amp;A, y el productor recibe el saldo. <strong>Precisamente por la estrechez del mercado doméstico</strong>, en los últimos años el cine colombiano ha pivoteado al exterior buscando recaudo en otros mercados: producción en pesos con ingresos en dólares, coproducciones con territorios mayores, y películas habladas en inglés orientadas al mercado anglo y europeo. Las ventanas posteriores — TV abierta, streaming, ventas internacionales — tienen porcentajes propios pactados por contrato.</span>
+        <span data-lang-show="en">These figures represent a <strong>theoretical scenario</strong> of Colombian domestic box office — theatres keep close to 50%, the distributor deducts commission and recoups P&amp;A, and the producer receives the balance. <strong>Precisely because of the domestic market's narrowness</strong>, in recent years Colombian cinema has pivoted abroad seeking revenue in other markets: peso-denominated production with dollar-denominated revenue, coproductions with larger territories, and English-language films targeting the anglo and European markets. Subsequent windows — broadcast TV, streaming, international sales — have their own contractual splits.</span>
+      </p>
+    </div>
+
+    <!-- ETAPA B: Waterfall del inversionista -->
+    <div class="wf-stage">
+      <div class="wf-stage-head">
+        <span class="wf-stage-num">B</span>
+        <div class="wf-stage-meta">
+          <p class="wf-stage-tag"><span data-lang-show="es" class="show">Dentro del productor</span><span data-lang-show="en">Within the producer</span></p>
+          <h4><span data-lang-show="es" class="show">Prioridad del inversionista Ley 814</span><span data-lang-show="en">Law 814 investor priority</span></h4>
+        </div>
+      </div>
+
+      <div class="wf-cascade">
+
+        <div class="wf-step">
+          <span class="num">01</span>
+          <div class="content">
+            <h5><span data-lang-show="es" class="show">CIC y ahorro tributario · 57,75%</span><span data-lang-show="en">CIC and tax saving · 57.75%</span></h5>
+            <p><span data-lang-show="es" class="show">El inversionista recibe el CIC y aplica la deducción del 165%, recuperando <strong>el 57,75% del capital vía declaración de renta</strong> del año del giro. Independiente del waterfall de la película — viene de la DIAN.</span><span data-lang-show="en">The investor receives the CIC and applies the 165% deduction, recovering <strong>57.75% of capital via tax return</strong> for the year of disbursement. Independent of the film waterfall — comes from the DIAN.</span></p>
+          </div>
+          <span class="tag"><span data-lang-show="es" class="show">Vía DIAN</span><span data-lang-show="en">Via DIAN</span></span>
+        </div>
+
+        <div class="wf-step priority">
+          <span class="num">02</span>
+          <div class="content">
+            <h5><span data-lang-show="es" class="show">Recoupment hasta el 100% del capital</span><span data-lang-show="en">Recoupment up to 100% of capital</span></h5>
+            <p><span data-lang-show="es" class="show">De los ingresos de explotación de la obra, el inversionista recibe en <strong>prioridad el 42,25% restante</strong> hasta cubrir el 100% del capital invertido. Antes del productor y de los demás inversionistas.</span><span data-lang-show="en">From the film's exploitation revenue, the investor receives in <strong>priority the remaining 42.25%</strong> until reaching 100% recoupment of capital. Before the producer and other investors.</span></p>
+          </div>
+          <span class="tag"><span data-lang-show="es" class="show">Prioridad</span><span data-lang-show="en">Priority</span></span>
+        </div>
+
+        <div class="wf-step priority">
+          <span class="num">03</span>
+          <div class="content">
+            <h5><span data-lang-show="es" class="show">Premium del 20% — total 120%</span><span data-lang-show="en">20% premium — 120% total</span></h5>
+            <p><span data-lang-show="es" class="show">Recuperado el 100%, el inversionista recibe en prioridad un <strong>premium adicional del 20%</strong> sobre su aporte. Completa la recuperación contractual hasta el 120% pactado.</span><span data-lang-show="en">Once 100% is recouped, the investor receives in priority an <strong>additional 20% premium</strong> on its contribution. Completes the contractual recovery up to the agreed 120%.</span></p>
+          </div>
+          <span class="tag"><span data-lang-show="es" class="show">Prioridad</span><span data-lang-show="en">Priority</span></span>
+        </div>
+
+        <div class="wf-step">
+          <span class="num">04</span>
+          <div class="content">
+            <h5><span data-lang-show="es" class="show">Pool 50 / 50 · productor e inversionistas</span><span data-lang-show="en">50 / 50 pool · producer and investors</span></h5>
+            <p><span data-lang-show="es" class="show">Cubierto el 120% del inversionista, los ingresos remanentes se distribuyen <strong>50% para el productor y 50% para el pool de inversionistas</strong> (incluido nuevamente el inversionista Ley 814). Es la participación en utilidades del Art. 17 Ley 814.</span><span data-lang-show="en">Once the investor's 120% is covered, remaining revenue is split <strong>50% to the producer and 50% to the investor pool</strong> (including the Law 814 investor again). This is the profit participation under Art. 17 Law 814.</span></p>
+          </div>
+          <span class="tag">50 / 50</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Condiciones contractuales -->
+    <div class="wf-cond">
+      <div class="wf-cond-head">
+        <p class="wf-cond-eyebrow"><span data-lang-show="es" class="show">Contrato de inversión Ley 814</span><span data-lang-show="en">Law 814 investment contract</span></p>
+        <h4><span data-lang-show="es" class="show">Condiciones contractuales clave</span><span data-lang-show="en">Key contractual conditions</span></h4>
+      </div>
+
+      <div class="wf-cond-grid">
+
+        <div class="wf-cond-item">
+          <span class="wf-cond-num">01</span>
+          <div>
+            <h6><span data-lang-show="es" class="show">Prioridad de recuperación 120%</span><span data-lang-show="en">120% recoupment priority</span></h6>
+            <p><span data-lang-show="es" class="show">El inversionista recupera <strong>hasta el 120%</strong> de su aporte antes que el productor y los demás inversionistas.</span><span data-lang-show="en">The investor recoups <strong>up to 120%</strong> of its contribution before the producer and other investors.</span></p>
+          </div>
+        </div>
+
+        <div class="wf-cond-item">
+          <span class="wf-cond-num">02</span>
+          <div>
+            <h6><span data-lang-show="es" class="show">No es garantía de pago</span><span data-lang-show="en">Not a payment guarantee</span></h6>
+            <p><span data-lang-show="es" class="show">La prioridad <strong>depende del desempeño comercial</strong>. El productor solo garantiza la emisión del CIC.</span><span data-lang-show="en">Priority <strong>depends on commercial performance</strong>. The producer only guarantees CIC issuance.</span></p>
+          </div>
+        </div>
+
+        <div class="wf-cond-item">
+          <span class="wf-cond-num">03</span>
+          <div>
+            <h6><span data-lang-show="es" class="show">El inversionista no es productor</span><span data-lang-show="en">Investor is not the producer</span></h6>
+            <p><span data-lang-show="es" class="show">Posición estrictamente <strong>financiera</strong>. Sin atribuciones creativas, sin co-titularidad de derechos de la obra.</span><span data-lang-show="en">Strictly a <strong>financial</strong> position. No creative attributions, no co-ownership of film rights.</span></p>
+          </div>
+        </div>
+
+        <div class="wf-cond-item">
+          <span class="wf-cond-num">04</span>
+          <div>
+            <h6><span data-lang-show="es" class="show">Participación en utilidades</span><span data-lang-show="en">Profit participation</span></h6>
+            <p><span data-lang-show="es" class="show">Una vez recuperado el capital, el inversionista <strong>participa pro rata</strong> en las utilidades de explotación (Art. 17 Ley 814).</span><span data-lang-show="en">Once capital is recouped, the investor <strong>participates pro rata</strong> in exploitation profits (Art. 17 Law 814).</span></p>
+          </div>
+        </div>
+
+        <div class="wf-cond-item">
+          <span class="wf-cond-num">05</span>
+          <div>
+            <h6><span data-lang-show="es" class="show">Administración fiduciaria</span><span data-lang-show="en">Trustee management</span></h6>
+            <p><span data-lang-show="es" class="show">Toda la mecánica de ingresos y desembolsos pasa por el <strong>patrimonio autónomo</strong>. La fiduciaria reporta periódicamente al inversionista.</span><span data-lang-show="en">All revenue and disbursement mechanics flow through the <strong>autonomous estate</strong>. The trustee reports periodically to the investor.</span></p>
+          </div>
+        </div>
+
+        <div class="wf-cond-item">
+          <span class="wf-cond-num">06</span>
+          <div>
+            <h6><span data-lang-show="es" class="show">Auditoría del waterfall</span><span data-lang-show="en">Waterfall audit</span></h6>
+            <p><span data-lang-show="es" class="show">El contrato típicamente otorga al inversionista el <strong>derecho de auditoría</strong> sobre los ingresos reportados por el productor y la fiduciaria.</span><span data-lang-show="en">The contract typically grants the investor an <strong>audit right</strong> over revenue reported by the producer and the trustee.</span></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ SECCIÓN 08 — MERCADO SECUNDARIO ═══════════════════════ -->
+<section class="section section--alt">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>08 — <span data-lang-show="es" class="show">Mercado secundario</span><span data-lang-show="en">Secondary market</span></h2>
+      <h3><span data-lang-show="es" class="show">Liquidez y arbitraje del CIC</span><span data-lang-show="en">Liquidity and CIC arbitrage</span></h3>
+    </header>
+
+    <p class="section-lede">
+      <span data-lang-show="es" class="show">El CIC es <strong>título a la orden negociable</strong> (Art. 17 Ley 814) — el inversionista original puede transferirlo a un tercero. En la práctica, el CIC se comercializa típicamente al <strong>40% de su valor nominal</strong>: el vendedor obtiene liquidez inmediata; el comprador adquiere el derecho a la deducción del 165% y captura el diferencial entre el ahorro tributario (57,75%) y el precio pagado (40%).</span>
+      <span data-lang-show="en">The CIC is a <strong>negotiable order instrument</strong> (Art. 17 Law 814) — the original investor may transfer it to a third party. In practice, the CIC is typically traded at <strong>40% of its nominal value</strong>: the seller obtains immediate liquidity; the buyer acquires the right to the 165% deduction and captures the spread between the tax saving (57.75%) and the price paid (40%).</span>
+    </p>
+
+    <div class="market">
+
+      <!-- Vendedor -->
+      <article class="market-col seller">
+        <div class="market-head">
+          <p class="market-eyebrow"><span data-lang-show="es" class="show">Vendedor · titular original</span><span data-lang-show="en">Seller · original holder</span></p>
+          <h4><span data-lang-show="es" class="show">Busca liquidez</span><span data-lang-show="en">Seeks liquidity</span></h4>
+          <p><span data-lang-show="es" class="show">Inversionista que prefiere capital inmediato antes que esperar la aplicación del beneficio en la declaración de renta, o que no tiene renta líquida suficiente para absorber la deducción. Cifras sobre un CIC nominal de COP 100M.</span><span data-lang-show="en">Investor who prefers immediate capital over waiting for the tax filing, or who lacks sufficient net taxable income to absorb the deduction. Figures based on a CIC of COP 100M nominal.</span></p>
+        </div>
+        <div class="market-body">
+          <div class="market-row">
+            <span class="lbl"><span data-lang-show="es" class="show">Valor nominal del CIC</span><span data-lang-show="en">CIC nominal value</span></span>
+            <span class="val">100<span class="cur">COP M</span></span>
+          </div>
+          <div class="market-row">
+            <span class="lbl"><span data-lang-show="es" class="show">Precio de venta (40% del nominal)</span><span data-lang-show="en">Sale price (40% of nominal)</span></span>
+            <span class="val">40<span class="cur">COP M</span></span>
+          </div>
+          <div class="market-row">
+            <span class="lbl"><span data-lang-show="es" class="show">Diferencial cedido al comprador</span><span data-lang-show="en">Spread transferred to buyer</span></span>
+            <span class="val">17,75<span class="cur">COP M</span></span>
+          </div>
+        </div>
+        <div class="market-foot">
+          <span class="lbl"><span data-lang-show="es" class="show">Liquidez recibida</span><span data-lang-show="en">Liquidity received</span></span>
+          <span class="val">40<span class="cur">COP M</span></span>
+        </div>
+      </article>
+
+      <!-- Comprador -->
+      <article class="market-col buyer">
+        <div class="market-head">
+          <p class="market-eyebrow"><span data-lang-show="es" class="show">Comprador · adquirente</span><span data-lang-show="en">Buyer · acquirer</span></p>
+          <h4><span data-lang-show="es" class="show">Adquiere descuento fiscal</span><span data-lang-show="en">Acquires tax discount</span></h4>
+          <p><span data-lang-show="es" class="show">Contribuyente con renta líquida suficiente que compra el CIC a 40% nominal y aplica la deducción del 165% en su declaración. Mismo CIC de COP 100M.</span><span data-lang-show="en">Taxpayer with sufficient net taxable income who buys the CIC at 40% nominal and applies the 165% deduction in their tax return. Same CIC of COP 100M.</span></p>
+        </div>
+        <div class="market-body">
+          <div class="market-row">
+            <span class="lbl"><span data-lang-show="es" class="show">Costo de adquisición del CIC</span><span data-lang-show="en">CIC acquisition cost</span></span>
+            <span class="val">40<span class="cur">COP M</span></span>
+          </div>
+          <div class="market-row">
+            <span class="lbl"><span data-lang-show="es" class="show">Deducción aplicable · 165%</span><span data-lang-show="en">Applicable deduction · 165%</span></span>
+            <span class="val">165<span class="cur">COP M</span></span>
+          </div>
+          <div class="market-row">
+            <span class="lbl"><span data-lang-show="es" class="show">Ahorro tributario (tarifa 35%)</span><span data-lang-show="en">Tax saving (35% rate)</span></span>
+            <span class="val">57,75<span class="cur">COP M</span></span>
+          </div>
+        </div>
+        <div class="market-foot">
+          <span class="lbl"><span data-lang-show="es" class="show">Ganancia neta</span><span data-lang-show="en">Net gain</span></span>
+          <span class="val">17,75<span class="cur">COP M</span></span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="market-context">
+      <span class="tag"><span data-lang-show="es" class="show">Lógica del descuento del 40%</span><span data-lang-show="en">Logic of the 40% discount</span></span>
+      <span data-lang-show="es" class="show">El ahorro tributario real del 165% es del <strong>57,75% del capital</strong>. Comercializar el CIC al 40% del nominal permite al vendedor obtener liquidez inmediata y cede al comprador el diferencial de 17,75 puntos porcentuales como compensación por aplicar el certificado a su declaración. La operación se documenta mediante <strong>contrato de cesión del título a la orden</strong>. Es ágil, transferible y no requiere autorización de Mincultura.</span>
+      <span data-lang-show="en">The real tax saving from the 165% deduction is <strong>57.75% of capital</strong>. Trading the CIC at 40% of nominal allows the seller to obtain immediate liquidity and transfers the 17.75 percentage-point spread to the buyer as compensation for applying the certificate to their tax return. The operation is documented through a <strong>cession agreement of the order instrument</strong>. It is swift, transferable, and requires no authorization from the Ministry of Culture.</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ SECCIÓN 09 — MARCO NORMATIVO ═══════════════════════ -->
+<section class="section">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>09 — <span data-lang-show="es" class="show">Marco normativo</span><span data-lang-show="en">Regulatory framework</span></h2>
+      <h3><span data-lang-show="es" class="show">Normas aplicables al régimen</span><span data-lang-show="en">Applicable rules</span></h3>
+    </header>
+
+    <p class="section-lede">
+      <span data-lang-show="es" class="show">El régimen tributario de la Ley 814 se construye sobre una norma marco (la propia Ley 814 de 2003), una reglamentación compilada (Decreto 1080 de 2015 — Decreto Único Reglamentario del Sector Cultura), modificaciones tributarias posteriores que ajustan parámetros (Ley 1607 de 2012 elevó la deducción al 165%; Ley 2277 de 2022 incorporó la tarifa adicional financiera), y disposiciones del Código de Comercio sobre la fiducia mercantil que estructura el patrimonio autónomo.</span>
+      <span data-lang-show="en">The Law 814 tax regime is built on a framework statute (Law 814 of 2003 itself), compiled regulations (Decree 1080 of 2015 — Sole Regulatory Decree of the Culture Sector), subsequent tax amendments that adjust parameters (Law 1607 of 2012 raised the deduction to 165%; Law 2277 of 2022 added the financial-institution rate), and Code of Commerce provisions on the commercial trust that structures the autonomous estate.</span>
+    </p>
+
+    <table class="legal-table">
+      <thead>
+        <tr>
+          <th><span data-lang-show="es" class="show">Norma</span><span data-lang-show="en">Statute</span></th>
+          <th class="center"><span data-lang-show="es" class="show">Año</span><span data-lang-show="en">Year</span></th>
+          <th><span data-lang-show="es" class="show">Objeto</span><span data-lang-show="en">Subject</span></th>
+          <th class="right"><span data-lang-show="es" class="show">Referencia clave</span><span data-lang-show="en">Key reference</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="norma">Ley 814<span class="ref"><span data-lang-show="es" class="show">Norma marco</span><span data-lang-show="en">Framework law</span></span></td>
+          <td class="year">2003</td>
+          <td class="desc"><span data-lang-show="es" class="show"><strong>Ley de Cine.</strong> Crea el régimen de fomento cinematográfico, los beneficios tributarios por inversión y donación (Art. 16) y la naturaleza negociable del certificado (Art. 17).</span><span data-lang-show="en"><strong>Film Law.</strong> Creates the cinematographic incentive regime, the tax benefits for investment and donation (Art. 16) and the negotiable nature of the certificate (Art. 17).</span></td>
+          <td class="ref-col">Arts. 16, 17</td>
+        </tr>
+
+        <tr>
+          <td class="norma">Decreto 1080<span class="ref"><span data-lang-show="es" class="show">Decreto único reglamentario</span><span data-lang-show="en">Sole regulatory decree</span></span></td>
+          <td class="year">2015</td>
+          <td class="desc"><span data-lang-show="es" class="show"><strong>Decreto Único Reglamentario del Sector Cultura.</strong> Compila y racionaliza la normativa reglamentaria del sector. Incluye el procedimiento de reconocimiento del proyecto cinematográfico, la fiducia para la administración de recursos y la emisión de los certificados de inversión y donación.</span><span data-lang-show="en"><strong>Sole Regulatory Decree of the Culture Sector.</strong> Compiles and rationalizes the sector's regulatory framework. Includes the project recognition procedure, the trust for resource management, and the issuance of investment and donation certificates.</span></td>
+          <td class="ref-col">Mincultura</td>
+        </tr>
+
+        <tr>
+          <td class="norma">Ley 1607<span class="ref"><span data-lang-show="es" class="show">Reforma tributaria</span><span data-lang-show="en">Tax reform</span></span></td>
+          <td class="year">2012</td>
+          <td class="desc"><span data-lang-show="es" class="show"><strong>Modifica el Art. 16 de la Ley 814.</strong> Eleva la deducción tributaria del 125% al <strong>165%</strong> del valor real invertido o donado. Es la norma vigente del parámetro central del régimen.</span><span data-lang-show="en"><strong>Amends Art. 16 of Law 814.</strong> Raises the tax deduction from 125% to <strong>165%</strong> of the actual amount invested or donated. Current rule for the regime's core parameter.</span></td>
+          <td class="ref-col">Art. 195</td>
+        </tr>
+
+        <tr>
+          <td class="norma">Ley 2277<span class="ref"><span data-lang-show="es" class="show">Reforma tributaria</span><span data-lang-show="en">Tax reform</span></span></td>
+          <td class="year">2022</td>
+          <td class="desc"><span data-lang-show="es" class="show"><strong>Tarifa adicional para entidades financieras.</strong> Suma 5 puntos porcentuales a la tarifa general de renta para bancos y aseguradoras durante 2023–2027 — eleva la tarifa al 40% y el ahorro Ley 814 al <strong>66%</strong> del capital.</span><span data-lang-show="en"><strong>Additional rate for financial institutions.</strong> Adds 5 percentage points to the general tax rate for banks and insurers during 2023–2027 — raises the rate to 40% and the Law 814 saving to <strong>66%</strong> of capital.</span></td>
+          <td class="ref-col">Art. 10</td>
+        </tr>
+
+        <tr>
+          <td class="norma"><span data-lang-show="es" class="show">Código de Comercio</span><span data-lang-show="en">Code of Commerce</span><span class="ref"><span data-lang-show="es" class="show">Fiducia mercantil</span><span data-lang-show="en">Commercial trust</span></span></td>
+          <td class="year">—</td>
+          <td class="desc"><span data-lang-show="es" class="show"><strong>Fiducia mercantil.</strong> Régimen del patrimonio autónomo: separación patrimonial, blindaje frente a acreedores del fideicomitente y administración por sociedad fiduciaria vigilada por la Superintendencia Financiera.</span><span data-lang-show="en"><strong>Commercial trust.</strong> Autonomous estate regime: patrimonial separation, shield from settlor's creditors, and management by a trustee company supervised by the Financial Superintendence.</span></td>
+          <td class="ref-col">Art. 1226</td>
+        </tr>
+
+        <tr>
+          <td class="norma">DIAN<span class="ref"><span data-lang-show="es" class="show">Doctrina tributaria</span><span data-lang-show="en">Tax doctrine</span></span></td>
+          <td class="year">2019</td>
+          <td class="desc"><span data-lang-show="es" class="show"><strong>Aplicación práctica del beneficio.</strong> Oficio 411/002083: el año tributario aplicable corresponde al año del desembolso efectivo. Oficio 28376/2019: la deducción se reporta en la <strong>casilla 66 del Formulario 110</strong>.</span><span data-lang-show="en"><strong>Practical application of the benefit.</strong> Opinion 411/002083: the applicable tax year is the year of actual disbursement. Opinion 28376/2019: the deduction is reported in <strong>box 66 of Form 110</strong>.</span></td>
+          <td class="ref-col"><span data-lang-show="es" class="show">Of. 411 · Of. 28376</span><span data-lang-show="en">Op. 411 · Op. 28376</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <aside class="jga-note" style="max-width:1200px;margin:2.5rem auto 0">
+      <span class="tag"><span data-lang-show="es" class="show">Regímenes incompatibles</span><span data-lang-show="en">Incompatible regimes</span></span>
+      <span data-lang-show="es" class="show">El régimen Ley 814 es <strong>excluyente</strong> con el CINA (Ley 1556 de 2012, incentivo a producciones extranjeras filmadas en Colombia) y con CoCrea (Ley 1955 de 2019 art. 180, modificado por la Ley 2277 de 2022 — Corporación Colombia Crea Talento). No se acumulan ni combinan. Para una misma obra es uno solo de los tres regímenes. El Art. 16 excluye además del beneficio el <strong>cine publicitario y las telenovelas</strong>; los documentales sí aplican si Mincultura los reconoce como proyecto cinematográfico nacional.</span>
+      <span data-lang-show="en">The Law 814 regime is <strong>mutually exclusive</strong> with CINA (Law 1556 of 2012, incentive for foreign productions shot in Colombia) and with CoCrea (Law 1955 of 2019 art. 180, amended by Law 2277 of 2022 — Corporación Colombia Crea Talento). They cannot be stacked or combined. For a single work, only one of the three regimes applies. Art. 16 also excludes from the benefit <strong>advertising film and soap operas</strong>; documentaries qualify if Mincultura recognizes them as national cinematographic projects.</span>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ SECCIÓN 10 — CASO TRABAJADO ═══════════════════════ -->
+<section class="section section--alt">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>10 — <span data-lang-show="es" class="show">Caso trabajado</span><span data-lang-show="en">Worked example</span></h2>
+      <h3><span data-lang-show="es" class="show">Un escenario end-to-end</span><span data-lang-show="en">An end-to-end scenario</span></h3>
+    </header>
+
+    <p class="section-lede">
+      <span data-lang-show="es" class="show">Persona jurídica colombiana, régimen general, con renta líquida suficiente para absorber la deducción. Inversión de <strong>COP 500 millones</strong> en una obra cinematográfica reconocida por Mincultura. Tarifa general 35%. El escenario asume desempeño comercial suficiente para activar el waterfall completo — recuperación del 120% más utilidades. La parte tributaria (Fase 1) es independiente del desempeño; las demás dependen de la explotación.</span>
+      <span data-lang-show="en">Colombian corporation, general regime, with sufficient net taxable income to absorb the deduction. Investment of <strong>COP 500 million</strong> in a Mincultura-recognized film. General rate 35%. The scenario assumes commercial performance sufficient to trigger the full waterfall — 120% recovery plus profits. The tax portion (Phase 1) is independent of performance; the rest depends on exploitation.</span>
+    </p>
+
+    <div class="case">
+
+      <!-- Controles interactivos -->
+      <div class="case-params">
+        <div class="case-param case-control">
+          <div class="case-param-lbl"><span data-lang-show="es" class="show">Monto de la inversión</span><span data-lang-show="en">Investment amount</span></div>
+          <div class="case-param-val"><span id="c-amt">500</span><span class="cur">COP M</span></div>
+          <input type="range" id="c-amt-input" min="100" max="5000" step="50" value="500" class="case-range">
+          <div class="case-range-meta"><span>COP 100M</span><span>COP 5.000M</span></div>
+        </div>
+        <div class="case-param case-control">
+          <div class="case-param-lbl"><span data-lang-show="es" class="show">Tipo de contribuyente</span><span data-lang-show="en">Taxpayer type</span></div>
+          <div class="case-param-val"><span id="c-rate-val">35%</span></div>
+          <div class="case-toggle">
+            <button data-rate="0.35" class="active"><span data-lang-show="es" class="show">Tarifa general</span><span data-lang-show="en">General</span></button>
+            <button data-rate="0.40"><span data-lang-show="es" class="show">Financiera</span><span data-lang-show="en">Financial</span></button>
+          </div>
+        </div>
+        <div class="case-param">
+          <div class="case-param-lbl"><span data-lang-show="es" class="show">Prioridad contractual</span><span data-lang-show="en">Contractual priority</span></div>
+          <div class="case-param-val">120%</div>
+          <div class="case-param-sub"><span data-lang-show="es" class="show">Recoupment + premium 20%</span><span data-lang-show="en">Recoupment + 20% premium</span></div>
+        </div>
+      </div>
+
+      <!-- Fases del flujo -->
+      <div class="case-phases">
+
+        <!-- FASE 1 — Ahorro tributario -->
+        <div class="case-phase">
+          <div class="case-phase-head">
+            <span class="case-phase-num">01</span>
+            <div class="case-phase-meta">
+              <p class="case-phase-tag"><span data-lang-show="es" class="show">Fase 1 · Vía DIAN — año del giro</span><span data-lang-show="en">Phase 1 · Via DIAN — year of disbursement</span></p>
+              <h4><span data-lang-show="es" class="show">Ahorro tributario</span><span data-lang-show="en">Tax saving</span></h4>
+            </div>
+            <span class="case-phase-total"><span id="c-saving">288,75</span><span class="cur">COP M</span></span>
+          </div>
+          <div class="case-row">
+            <span class="lbl"><span class="stage">A</span><span data-lang-show="es" class="show">Inversión × 165% · deducción Ley 814</span><span data-lang-show="en">Investment × 165% · Law 814 deduction</span></span>
+            <span class="val"><span id="c-deduction">825</span><span class="cur">COP M</span></span>
+          </div>
+          <div class="case-row">
+            <span class="lbl"><span class="stage">B</span><span data-lang-show="es" class="show">Deducción × tarifa · ahorro tributario</span><span data-lang-show="en">Deduction × rate · tax saving</span></span>
+            <span class="val plus"><span id="c-saving-2">288,75</span><span class="cur">COP M</span></span>
+          </div>
+          <div class="case-row">
+            <span class="lbl"><span class="stage">=</span><span data-lang-show="es" class="show">Costo neto al cierre del año del giro</span><span data-lang-show="en">Net cost at year-of-disbursement closing</span></span>
+            <span class="val gold-strong"><span id="c-netcost">211,25</span><span class="cur">COP M</span></span>
+          </div>
+        </div>
+
+        <!-- FASE 2 — Recoupment 100% -->
+        <div class="case-phase">
+          <div class="case-phase-head">
+            <span class="case-phase-num">02</span>
+            <div class="case-phase-meta">
+              <p class="case-phase-tag"><span data-lang-show="es" class="show">Fase 2 · Waterfall — prioridad</span><span data-lang-show="en">Phase 2 · Waterfall — priority</span></p>
+              <h4><span data-lang-show="es" class="show">Recoupment hasta el 100%</span><span data-lang-show="en">Recoupment up to 100%</span></h4>
+            </div>
+            <span class="case-phase-total"><span id="c-recoup">211,25</span><span class="cur">COP M</span></span>
+          </div>
+          <div class="case-row">
+            <span class="lbl"><span class="stage">C</span><span data-lang-show="es" class="show">Ingresos de explotación · prioridad inversionista</span><span data-lang-show="en">Exploitation revenue · investor priority</span></span>
+            <span class="val plus"><span id="c-recoup-2">211,25</span><span class="cur">COP M</span></span>
+          </div>
+          <div class="case-row">
+            <span class="lbl"><span class="stage">=</span><span data-lang-show="es" class="show">Capital recuperado al 100%</span><span data-lang-show="en">Capital recouped at 100%</span></span>
+            <span class="val gold-strong"><span id="c-100">500</span><span class="cur">COP M</span></span>
+          </div>
+        </div>
+
+        <!-- FASE 3 — Premium 20% -->
+        <div class="case-phase">
+          <div class="case-phase-head">
+            <span class="case-phase-num">03</span>
+            <div class="case-phase-meta">
+              <p class="case-phase-tag"><span data-lang-show="es" class="show">Fase 3 · Waterfall — premium</span><span data-lang-show="en">Phase 3 · Waterfall — premium</span></p>
+              <h4><span data-lang-show="es" class="show">Premium del 20% sobre el aporte</span><span data-lang-show="en">20% premium on contribution</span></h4>
+            </div>
+            <span class="case-phase-total"><span id="c-premium">100,00</span><span class="cur">COP M</span></span>
+          </div>
+          <div class="case-row">
+            <span class="lbl"><span class="stage">D</span><span data-lang-show="es" class="show">20% × inversión · prioridad contractual</span><span data-lang-show="en">20% × investment · contractual priority</span></span>
+            <span class="val plus"><span id="c-premium-2">100,00</span><span class="cur">COP M</span></span>
+          </div>
+          <div class="case-row">
+            <span class="lbl"><span class="stage">=</span><span data-lang-show="es" class="show">Recuperación contractual al 120%</span><span data-lang-show="en">Contractual recovery at 120%</span></span>
+            <span class="val gold-strong"><span id="c-120">600</span><span class="cur">COP M</span></span>
+          </div>
+        </div>
+
+        <!-- FASE 4 — Pool 50/50 (ilustrativo) -->
+        <div class="case-phase">
+          <div class="case-phase-head">
+            <span class="case-phase-num">04</span>
+            <div class="case-phase-meta">
+              <p class="case-phase-tag"><span data-lang-show="es" class="show">Fase 4 · Post-recoupment — utilidades</span><span data-lang-show="en">Phase 4 · Post-recoupment — profits</span></p>
+              <h4><span data-lang-show="es" class="show">Pool 50/50 · productor e inversionistas</span><span data-lang-show="en">50/50 pool · producer and investors</span></h4>
+            </div>
+            <span class="case-phase-total"><span data-lang-show="es" class="show">Variable</span><span data-lang-show="en">Variable</span></span>
+          </div>
+          <div class="case-row">
+            <span class="lbl"><span class="stage">E</span><span data-lang-show="es" class="show">Participación pro rata en utilidades de explotación (Art. 17). Depende del desempeño post-recoupment.</span><span data-lang-show="en">Pro rata participation in exploitation profits (Art. 17). Depends on post-recoupment performance.</span></span>
+            <span class="val"><span data-lang-show="es" class="show">+ utilidad</span><span data-lang-show="en">+ profit</span></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Total económico recibido (sin utilidades) -->
+      <div class="case-total-block">
+        <span class="lbl"><span data-lang-show="es" class="show">Total económico recibido · recuperación contractual</span><span data-lang-show="en">Total received · contractual recovery</span></span>
+        <span class="val"><span id="c-total">600</span><span class="cur">COP M</span></span>
+      </div>
+
+      <p class="case-disclaimer">
+        <span data-lang-show="es" class="show"><strong>Notas.</strong> El total económico de la recuperación contractual es <strong>120% del aporte</strong> (recoupment 100% + premium 20%), más la participación pro rata en utilidades de explotación (Fase 4). La Fase 1 está <strong>causada en el año del giro</strong> y es independiente del desempeño comercial. Las Fases 2, 3 y 4 dependen de los ingresos de explotación de la obra y de la prioridad contractual del 120% pactada en el contrato de inversión.</span>
+        <span data-lang-show="en"><strong>Notes.</strong> Total contractual recovery is <strong>120% of the contribution</strong> (100% recoupment + 20% premium), plus pro rata participation in exploitation profits (Phase 4). Phase 1 is <strong>accrued in the year of disbursement</strong> and independent of commercial performance. Phases 2, 3 and 4 depend on exploitation revenue and on the 120% contractual priority set in the investment contract.</span>
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ SECCIÓN 11 — FAQ ═══════════════════════ -->
+<section class="section">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>11 — <span data-lang-show="es" class="show">Preguntas frecuentes</span><span data-lang-show="en">Frequently asked questions</span></h2>
+      <h3><span data-lang-show="es" class="show">Dudas típicas del inversionista</span><span data-lang-show="en">Typical investor questions</span></h3>
+    </header>
+
+    <div class="faq">
+
+      <details class="faq-item">
+        <summary><span data-lang-show="es" class="show">¿Puedo combinar Ley 814 con CINA o CoCrea?</span><span data-lang-show="en">Can I combine Law 814 with CINA or CoCrea?</span></summary>
+        <div class="a">
+          <span data-lang-show="es" class="show">No. Los tres regímenes son <strong>mutuamente excluyentes</strong>. Para una misma obra solo aplica uno: Ley 814 (inversión doméstica), CINA (productores extranjeros, Ley 1556 de 2012) o CoCrea (Ley 1955/2019 art. 180 mod. Ley 2277/2022). El productor define cuál régimen utiliza al estructurar el proyecto.</span>
+          <span data-lang-show="en">No. The three regimes are <strong>mutually exclusive</strong>. For a given work only one applies: Law 814 (domestic investment), CINA (foreign producers, Law 1556 of 2012) or CoCrea (Law 1955/2019 art. 180 amended by Law 2277/2022). The producer decides which regime to use when structuring the project.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span data-lang-show="es" class="show">¿Y si no tengo renta líquida suficiente para absorber la deducción?</span><span data-lang-show="en">What if I don't have enough net taxable income to absorb the deduction?</span></summary>
+        <div class="a">
+          <span data-lang-show="es" class="show">Tiene dos opciones. La primera: la deducción <strong>genera o aumenta pérdida fiscal</strong>, compensable conforme al régimen general del Estatuto Tributario. La segunda: vender el CIC en el <strong>mercado secundario al 40% del nominal</strong> y monetizar el certificado inmediatamente sin esperar a la declaración de renta.</span>
+          <span data-lang-show="en">You have two options. First: the deduction <strong>generates or increases a tax loss</strong>, which can be carried forward under the general regime of the Tax Code. Second: sell the CIC in the <strong>secondary market at 40% of nominal</strong> and monetize the certificate immediately without waiting for the tax return.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span data-lang-show="es" class="show">¿En cuánto tiempo me emiten el CIC?</span><span data-lang-show="en">How long does CIC issuance take?</span></summary>
+        <div class="a">
+          <span data-lang-show="es" class="show">El reconocimiento del proyecto por DACMI tiene un plazo legal de <strong>15 días hábiles + 10 si hay aclaraciones</strong>. La emisión del CIC se hace después del giro y de la certificación del gasto. En la práctica, todo el proceso completo se surte en aproximadamente 8 semanas — siendo cautelosos y anticipando demoras administrativas.</span>
+          <span data-lang-show="en">DACMI project recognition has a statutory term of <strong>15 business days + 10 if clarifications are needed</strong>. The CIC is issued after the transfer and expense certification. In practice, the full process takes around 8 weeks — being conservative and anticipating administrative delays.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span data-lang-show="es" class="show">¿Pierdo el beneficio si la película no se estrena?</span><span data-lang-show="en">Do I lose the benefit if the film is not released?</span></summary>
+        <div class="a">
+          <span data-lang-show="es" class="show">No. El <strong>ahorro tributario del 57,75% es independiente del estreno</strong>. Se causa en el año del giro al patrimonio autónomo, contra una resolución de reconocimiento ya emitida por DACMI. Lo que sí depende del estreno y la explotación es la recuperación del 42,25% restante, el premium del 20% y las utilidades.</span>
+          <span data-lang-show="en">No. The <strong>57.75% tax saving is independent of release</strong>. It accrues in the year the transfer is made to the autonomous estate, against a DACMI recognition resolution already issued. What does depend on release and exploitation is the recovery of the remaining 42.25%, the 20% premium and the profits.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span data-lang-show="es" class="show">¿Quién audita el waterfall y los ingresos de la película?</span><span data-lang-show="en">Who audits the waterfall and film revenue?</span></summary>
+        <div class="a">
+          <span data-lang-show="es" class="show">El contrato de inversión típicamente otorga al inversionista <strong>derecho de auditoría</strong> sobre los ingresos reportados por el productor y la fiduciaria. La sociedad fiduciaria, vigilada por la Superintendencia Financiera, administra los desembolsos y reporta periódicamente. La revisoría fiscal del productor también está obligada por ley.</span>
+          <span data-lang-show="en">The investment contract typically grants the investor an <strong>audit right</strong> over revenue reported by the producer and the trustee. The trustee company, supervised by the Financial Superintendence, manages disbursements and reports periodically. The producer's statutory auditor is also legally bound.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span data-lang-show="es" class="show">¿La fiduciaria garantiza la rentabilidad de la inversión?</span><span data-lang-show="en">Does the trustee guarantee investment profitability?</span></summary>
+        <div class="a">
+          <span data-lang-show="es" class="show">No. La fiducia mercantil <strong>garantiza la administración del patrimonio autónomo</strong> conforme al contrato de fiducia, no el desempeño comercial de la obra. La fiduciaria asegura que los recursos se ejecutan según el presupuesto aprobado y que no se confunden con el patrimonio del productor. La rentabilidad depende del éxito de la película.</span>
+          <span data-lang-show="en">No. The commercial trust <strong>guarantees management of the autonomous estate</strong> under the trust agreement, not the film's commercial performance. The trustee ensures resources are spent against the approved budget and that funds are not commingled with the producer's patrimony. Profitability depends on the film's success.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span data-lang-show="es" class="show">¿Puedo aplicar la deducción al año siguiente?</span><span data-lang-show="en">Can I apply the deduction in a later year?</span></summary>
+        <div class="a">
+          <span data-lang-show="es" class="show">No. Conforme al <strong>Oficio DIAN 411/002083</strong>, el año tributario aplicable es el <strong>año del desembolso efectivo</strong> al patrimonio autónomo, no el año de la firma del contrato ni un año posterior. La deducción se reporta en la <strong>casilla 66 del Formulario 110</strong> (DIAN Oficio 28376/2019). Si no se aplica en ese año, puede generar pérdida fiscal compensable.</span>
+          <span data-lang-show="en">No. Under <strong>DIAN Opinion 411/002083</strong>, the applicable tax year is the <strong>year of actual disbursement</strong> to the autonomous estate, not the year of contract signing or a later year. The deduction is reported in <strong>box 66 of Form 110</strong> (DIAN Opinion 28376/2019). If not applied that year, it may generate a carry-forward tax loss.</span>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary><span data-lang-show="es" class="show">¿Personas naturales pueden invertir o solo personas jurídicas?</span><span data-lang-show="en">Can individuals invest, or only corporations?</span></summary>
+        <div class="a">
+          <span data-lang-show="es" class="show">Aplica a <strong>todo contribuyente del impuesto sobre la renta</strong> en Colombia — personas jurídicas y personas naturales por igual, según la tarifa marginal que corresponda. El parámetro varía según la tarifa efectiva del contribuyente, pero la mecánica del 165% es la misma.</span>
+          <span data-lang-show="en">It applies to <strong>any Colombian income-tax payer</strong> — corporations and individuals alike, at the applicable marginal rate. The parameter varies with the taxpayer's effective rate, but the 165% mechanic is the same.</span>
+        </div>
+      </details>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ SECCIÓN 12 — GARANTÍAS / DUE DILIGENCE ═══════════════════════ -->
+<section class="section section--alt">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>12 — <span data-lang-show="es" class="show">Garantías</span><span data-lang-show="en">Safeguards</span></h2>
+      <h3><span data-lang-show="es" class="show">Due diligence antes del giro</span><span data-lang-show="en">Due diligence before disbursement</span></h3>
+    </header>
+
+    <p class="section-lede">
+      <span data-lang-show="es" class="show">El régimen Ley 814 ofrece garantía estructural (patrimonio autónomo, fiducia mercantil) pero exige verificación previa de cada elemento contractual y administrativo. Antes del giro, todo inversionista institucional debe confirmar los siguientes puntos:</span>
+      <span data-lang-show="en">The Law 814 regime provides structural safeguards (autonomous estate, commercial trust) but requires prior verification of every contractual and administrative element. Before disbursement, every institutional investor should confirm the following:</span>
+    </p>
+
+    <div class="dd-grid">
+
+      <div class="dd-item">
+        <span class="dd-check">✓</span>
+        <div>
+          <h5><span data-lang-show="es" class="show">Resolución de proyecto nacional</span><span data-lang-show="en">National project resolution</span></h5>
+          <p><span data-lang-show="es" class="show"><strong>Vigente y específica</strong> para la obra y el monto. Emitida por DACMI · Mincultura. Sin ella el CIC no se emite.</span><span data-lang-show="en"><strong>Current and specific</strong> to the work and amount. Issued by DACMI · Ministry of Culture. Without it, no CIC is issued.</span></p>
+        </div>
+      </div>
+
+      <div class="dd-item">
+        <span class="dd-check">✓</span>
+        <div>
+          <h5><span data-lang-show="es" class="show">Fiduciaria autorizada</span><span data-lang-show="en">Authorized trustee</span></h5>
+          <p><span data-lang-show="es" class="show">Sociedad fiduciaria <strong>vigilada por la Superintendencia Financiera</strong> y con experiencia en patrimonios autónomos audiovisuales.</span><span data-lang-show="en">Trustee company <strong>supervised by the Financial Superintendence</strong> with experience in audiovisual autonomous estates.</span></p>
+        </div>
+      </div>
+
+      <div class="dd-item">
+        <span class="dd-check">✓</span>
+        <div>
+          <h5><span data-lang-show="es" class="show">Contrato de inversión completo</span><span data-lang-show="en">Complete investment contract</span></h5>
+          <p><span data-lang-show="es" class="show"><strong>Prioridad de recuperación 120%</strong>, waterfall, pool 50/50, derechos de auditoría, reporting y mecánica de utilidades plenamente pactados.</span><span data-lang-show="en"><strong>120% recovery priority</strong>, waterfall, 50/50 pool, audit rights, reporting and profit mechanics fully agreed.</span></p>
+        </div>
+      </div>
+
+      <div class="dd-item">
+        <span class="dd-check">✓</span>
+        <div>
+          <h5><span data-lang-show="es" class="show">Presupuesto y plan de inversión</span><span data-lang-show="en">Budget and investment plan</span></h5>
+          <p><span data-lang-show="es" class="show">Aprobado por Mincultura y <strong>consistente con la resolución de proyecto nacional</strong>. La fiduciaria desembolsa contra rubros aprobados.</span><span data-lang-show="en">Approved by the Ministry of Culture and <strong>consistent with the project resolution</strong>. The trustee disburses against approved budget lines.</span></p>
+        </div>
+      </div>
+
+      <div class="dd-item">
+        <span class="dd-check">✓</span>
+        <div>
+          <h5><span data-lang-show="es" class="show">Cadena de derechos de la obra</span><span data-lang-show="en">Rights chain</span></h5>
+          <p><span data-lang-show="es" class="show">Verificada y libre de gravámenes. <strong>Cesión de derechos del guionista, director y demás autores</strong> al productor, debidamente registrada.</span><span data-lang-show="en">Verified and unencumbered. <strong>Rights assignments from screenwriter, director and other authors</strong> to the producer, duly registered.</span></p>
+        </div>
+      </div>
+
+      <div class="dd-item">
+        <span class="dd-check">✓</span>
+        <div>
+          <h5><span data-lang-show="es" class="show">Pólizas y seguros</span><span data-lang-show="en">Insurance and bonds</span></h5>
+          <p><span data-lang-show="es" class="show">Póliza de cumplimiento del productor, seguro <em>errors &amp; omissions</em> y, según el proyecto, <strong>póliza de finalización (completion bond)</strong>.</span><span data-lang-show="en">Producer performance bond, errors &amp; omissions insurance and, depending on the project, <strong>completion bond</strong>.</span></p>
+        </div>
+      </div>
+
+      <div class="dd-item">
+        <span class="dd-check">✓</span>
+        <div>
+          <h5><span data-lang-show="es" class="show">Estructura tributaria del inversionista</span><span data-lang-show="en">Investor's tax structure</span></h5>
+          <p><span data-lang-show="es" class="show"><strong>Renta líquida proyectada suficiente</strong> para absorber la deducción del 165% en el año del giro. Verificación del año fiscal aplicable.</span><span data-lang-show="en"><strong>Projected net taxable income sufficient</strong> to absorb the 165% deduction in the year of disbursement. Verification of the applicable fiscal year.</span></p>
+        </div>
+      </div>
+
+      <div class="dd-item">
+        <span class="dd-check">✓</span>
+        <div>
+          <h5><span data-lang-show="es" class="show">Reporting y gobernanza</span><span data-lang-show="en">Reporting and governance</span></h5>
+          <p><span data-lang-show="es" class="show">Periodicidad pactada de los reportes de la fiduciaria y del productor. <strong>Comité de seguimiento</strong> con participación del inversionista cuando proceda.</span><span data-lang-show="en">Agreed frequency of trustee and producer reports. <strong>Monitoring committee</strong> with investor participation when applicable.</span></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="dd-foot">
+      <div class="dd-foot-icon">JGA</div>
+      <p>
+        <span data-lang-show="es" class="show">JGA Abogados <strong>verifica cada uno de estos puntos</strong> en la fase pre-giro y estructura el contrato de inversión, el encargo fiduciario y el seguimiento contractual durante toda la vida del proyecto.</span>
+        <span data-lang-show="en">JGA Abogados <strong>verifies each of these points</strong> in the pre-disbursement phase and structures the investment contract, the trust agreement and the contractual oversight throughout the project's life.</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ SECCIÓN 13 — GLOSARIO ═══════════════════════ -->
+<section class="section">
+  <div class="wrap">
+
+    <header class="section-header">
+      <h2>13 — <span data-lang-show="es" class="show">Glosario</span><span data-lang-show="en">Glossary</span></h2>
+      <h3><span data-lang-show="es" class="show">Términos técnicos del régimen</span><span data-lang-show="en">Technical terms of the regime</span></h3>
+    </header>
+
+    <div class="glossary">
+
+      <div class="glossary-row">
+        <div class="glossary-term"><span data-lang-show="es" class="show">Certificado de Inversión Cinematográfica</span><span data-lang-show="en">Film Investment Certificate</span><span class="abbr">CIC</span></div>
+        <div class="glossary-def"><span data-lang-show="es" class="show">Título a la orden emitido por Mincultura · DACMI a nombre del inversionista, que acredita la inversión realizada en la obra. Es <strong>negociable libremente</strong> en el mercado conforme al Art. 17 de la Ley 814. Permite la deducción del 165% en renta.</span><span data-lang-show="en">Order instrument issued by Mincultura · DACMI in the investor's name, evidencing the investment made in the work. It is <strong>freely negotiable</strong> in the market under Art. 17 of Law 814. Enables the 165% income-tax deduction.</span></div>
+      </div>
+
+      <div class="glossary-row">
+        <div class="glossary-term"><span data-lang-show="es" class="show">Certificado de Donación Cinematográfica</span><span data-lang-show="en">Film Donation Certificate</span><span class="abbr">CDC</span></div>
+        <div class="glossary-def"><span data-lang-show="es" class="show">Documento emitido por Mincultura · DACMI a nombre del donante, que acredita la donación realizada. <strong>No es negociable</strong> (Art. 17 limita la negociabilidad únicamente al CIC). Habilita la misma deducción del 165% en renta.</span><span data-lang-show="en">Document issued by Mincultura · DACMI in the donor's name, evidencing the donation made. <strong>Not negotiable</strong> (Art. 17 limits negotiability to the CIC). Enables the same 165% income-tax deduction.</span></div>
+      </div>
+
+      <div class="glossary-row">
+        <div class="glossary-term">DACMI<span class="abbr"><span data-lang-show="es" class="show">Dirección de Audiovisuales, Cine y Medios Interactivos</span><span data-lang-show="en">Directorate of Audiovisual, Cinema and Interactive Media</span></span></div>
+        <div class="glossary-def"><span data-lang-show="es" class="show">Dirección del Ministerio de Cultura responsable de la <strong>política cinematográfica</strong>, del reconocimiento de proyectos como nacionales y de la emisión de los certificados (CIC y CDC).</span><span data-lang-show="en">Directorate of the Ministry of Culture responsible for <strong>cinematographic policy</strong>, project recognition as national, and issuance of certificates (CIC and CDC).</span></div>
+      </div>
+
+      <div class="glossary-row">
+        <div class="glossary-term"><span data-lang-show="es" class="show">Productor</span><span data-lang-show="en">Producer</span><span class="abbr"><span data-lang-show="es" class="show">Titular de derechos</span><span data-lang-show="en">Rights holder</span></span></div>
+        <div class="glossary-def"><span data-lang-show="es" class="show">Persona natural o jurídica titular de los <strong>derechos patrimoniales sobre la obra cinematográfica</strong> conforme a la Ley 23 de 1982 y a la Ley 814 de 2003. Responsable de la ejecución del proyecto, de la administración del presupuesto a través del encargo fiduciario y de la rendición de cuentas ante Mincultura. <strong>La sociedad productora del proyecto no puede ser inversionista</strong> bajo el régimen Ley 814.</span><span data-lang-show="en">Natural or legal person holding the <strong>economic rights over the cinematographic work</strong> under Law 23 of 1982 and Law 814 of 2003. Responsible for project execution, budget management through the trust, and accountability before the Ministry of Culture. <strong>The producer company itself cannot be an investor</strong> under the Law 814 regime.</span></div>
+      </div>
+
+      <div class="glossary-row">
+        <div class="glossary-term"><span data-lang-show="es" class="show">Inversionista</span><span data-lang-show="en">Investor</span><span class="abbr"><span data-lang-show="es" class="show">Contribuyente del impuesto sobre la renta</span><span data-lang-show="en">Income-tax payer</span></span></div>
+        <div class="glossary-def"><span data-lang-show="es" class="show"><strong>Cualquier contribuyente del impuesto sobre la renta</strong> en Colombia puede ser inversionista bajo Ley 814 — personas naturales o jurídicas por igual, <strong>incluyendo accionistas de la casa productora y su representante legal</strong>, siempre y cuando inviertan en nombre propio y no en representación de la sociedad productora. La única excepción es <strong>la propia sociedad productora del proyecto</strong>, que no puede ser inversionista de la película.</span><span data-lang-show="en"><strong>Any Colombian income-tax payer</strong> can be an investor under Law 814 — individuals and corporations alike, <strong>including the producer company's shareholders and its legal representative</strong>, provided they invest in their own name and not on behalf of the producer company. The only exception is <strong>the producer company itself</strong>, which cannot be an investor in its own project.</span></div>
+      </div>
+
+      <div class="glossary-row">
+        <div class="glossary-term"><span data-lang-show="es" class="show">Patrimonio autónomo</span><span data-lang-show="en">Autonomous estate</span></div>
+        <div class="glossary-def"><span data-lang-show="es" class="show">Vehículo legal separado, con <strong>personalidad jurídica propia</strong>, constituido bajo fiducia mercantil. No se confunde con el patrimonio del productor ni con el de la fiduciaria, ni responde por sus obligaciones. Es el destino del capital del inversionista.</span><span data-lang-show="en">Separate legal vehicle with <strong>its own legal personality</strong>, constituted under a commercial trust. Not commingled with the producer's or trustee's patrimony, and not liable for their obligations. It is the destination of the investor's capital.</span></div>
+      </div>
+
+      <div class="glossary-row">
+        <div class="glossary-term"><span data-lang-show="es" class="show">Fiducia mercantil</span><span data-lang-show="en">Commercial trust</span><span class="abbr">Art. 1226 C.Co.</span></div>
+        <div class="glossary-def"><span data-lang-show="es" class="show">Negocio jurídico por el cual una persona (fideicomitente) transfiere bienes a una sociedad fiduciaria para que los administre conforme a un fin determinado. Crea el patrimonio autónomo y produce el <strong>blindaje frente a acreedores</strong> del fideicomitente.</span><span data-lang-show="en">Legal arrangement by which a settlor transfers assets to a trustee for management under a specific purpose. Creates the autonomous estate and produces the <strong>shield from settlor's creditors</strong>.</span></div>
+      </div>
+
+      <div class="glossary-row">
+        <div class="glossary-term"><span data-lang-show="es" class="show">Waterfall · cascada de ingresos</span><span data-lang-show="en">Waterfall · revenue cascade</span></div>
+        <div class="glossary-def"><span data-lang-show="es" class="show">Orden contractual de distribución de los ingresos generados por la obra. Define quién recibe primero, segundo y subsiguiente. En Ley 814 el inversionista tiene <strong>prioridad hasta el 120%</strong> antes del pool 50/50 con el productor.</span><span data-lang-show="en">Contractual order of distribution of revenue generated by the work. Defines who receives first, second and subsequent. Under Law 814 the investor has <strong>priority up to 120%</strong> before the 50/50 pool with the producer.</span></div>
+      </div>
+
+      <div class="glossary-row">
+        <div class="glossary-term"><span data-lang-show="es" class="show">Recoupment</span><span data-lang-show="en">Recoupment</span></div>
+        <div class="glossary-def"><span data-lang-show="es" class="show">Recuperación del capital invertido a partir de los ingresos de explotación de la obra. En el modelo Ley 814, el inversionista <strong>completa el recoupment al 100% más un premium del 20%</strong> antes de que se active el pool 50/50.</span><span data-lang-show="en">Recovery of invested capital from the work's exploitation revenue. Under Law 814 the investor <strong>completes recoupment at 100% plus a 20% premium</strong> before the 50/50 pool activates.</span></div>
+      </div>
+
+      <div class="glossary-row">
+        <div class="glossary-term"><span data-lang-show="es" class="show">Renta líquida gravable</span><span data-lang-show="en">Net taxable income</span></div>
+        <div class="glossary-def"><span data-lang-show="es" class="show">Base sobre la cual se calcula el impuesto sobre la renta. Resulta de los ingresos netos menos los costos y gastos deducibles. La deducción del 165% Ley 814 <strong>reduce esta base</strong>, no el impuesto a pagar directamente.</span><span data-lang-show="en">Base on which income tax is computed. Equal to net revenue minus deductible costs and expenses. The 165% Law 814 deduction <strong>reduces this base</strong>, not the tax payable directly.</span></div>
+      </div>
+
+      <div class="glossary-row">
+        <div class="glossary-term"><span data-lang-show="es" class="show">Tarifa general de renta</span><span data-lang-show="en">General income tax rate</span></div>
+        <div class="glossary-def"><span data-lang-show="es" class="show">Tarifa del 35% aplicable a personas jurídicas del régimen general (Art. 240 ET). Las <strong>entidades financieras</strong> liquidan 5 puntos adicionales (tarifa 40%) durante 2023-2027 por la Ley 2277 de 2022 — eleva el ahorro Ley 814 al 66%.</span><span data-lang-show="en">35% rate applicable to general-regime corporations (Art. 240 Tax Code). <strong>Financial institutions</strong> pay 5 additional points (40% rate) during 2023-2027 under Law 2277 of 2022 — raises the Law 814 saving to 66%.</span></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ CTA — Servicios + Contacto ═══════════════════════ -->
+<section class="cta">
+  <div class="cta-grid">
+
+    <div>
+      <p class="cta-eyebrow">JGA Abogados · Ley 814</p>
+      <h2><span data-lang-show="es" class="show">Estructure su <em>inversión</em></span><span data-lang-show="en">Structure your <em>investment</em></span></h2>
+      <p class="cta-lede">
+        <span data-lang-show="es" class="show">JGA acompaña al inversionista institucional y al inversionista privado en cada paso del régimen Ley 814 — desde la decisión hasta la emisión del CIC y el seguimiento del waterfall durante toda la vida del proyecto.</span>
+        <span data-lang-show="en">JGA accompanies institutional and private investors at every step of the Law 814 regime — from initial decision to CIC issuance and waterfall oversight throughout the project's life.</span>
+      </p>
+
+      <div class="cta-services">
+        <div class="cta-service">
+          <span class="num">01</span>
+          <div>
+            <h5><span data-lang-show="es" class="show">Due diligence pre-giro</span><span data-lang-show="en">Pre-disbursement due diligence</span></h5>
+            <p><span data-lang-show="es" class="show">Verificación de resolución DACMI, fiduciaria autorizada, cadena de derechos, presupuesto aprobado, pólizas y estructura tributaria del inversionista.</span><span data-lang-show="en">Verification of DACMI resolution, authorized trustee, rights chain, approved budget, insurance bonds, and investor's tax structure.</span></p>
+          </div>
+        </div>
+
+        <div class="cta-service">
+          <span class="num">02</span>
+          <div>
+            <h5><span data-lang-show="es" class="show">Estructuración del contrato</span><span data-lang-show="en">Contract structuring</span></h5>
+            <p><span data-lang-show="es" class="show">Prioridad contractual 120%, waterfall, pool 50/50, derechos de auditoría, reporting, mecánica de utilidades y representaciones del productor.</span><span data-lang-show="en">120% contractual priority, waterfall, 50/50 pool, audit rights, reporting, profit mechanics and producer representations.</span></p>
+          </div>
+        </div>
+
+        <div class="cta-service">
+          <span class="num">03</span>
+          <div>
+            <h5><span data-lang-show="es" class="show">Constitución del encargo fiduciario</span><span data-lang-show="en">Trust agreement</span></h5>
+            <p><span data-lang-show="es" class="show">Negociación y suscripción del contrato de fiducia mercantil con sociedad fiduciaria vigilada por la Superintendencia Financiera.</span><span data-lang-show="en">Negotiation and execution of the commercial trust agreement with a trustee company supervised by the Financial Superintendence.</span></p>
+          </div>
+        </div>
+
+        <div class="cta-service">
+          <span class="num">04</span>
+          <div>
+            <h5><span data-lang-show="es" class="show">Acompañamiento DACMI y seguimiento</span><span data-lang-show="en">DACMI support and oversight</span></h5>
+            <p><span data-lang-show="es" class="show">Gestión del reconocimiento de proyecto nacional, emisión del CIC, aplicación tributaria en declaración de renta y seguimiento del waterfall durante toda la vida del proyecto.</span><span data-lang-show="en">Project recognition management, CIC issuance, tax application in income return and waterfall oversight throughout the project's life.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="contact-card">
+        <p class="card-tag"><span data-lang-show="es" class="show">Hablemos</span><span data-lang-show="en">Let's talk</span></p>
+        <h4>Andrés Jaramillo Gallego</h4>
+        <p class="role"><span data-lang-show="es" class="show">Senior Partner · JGA Abogados S.A.S.<br>T.P. 260.301 C.S.J.</span><span data-lang-show="en">Senior Partner · JGA Abogados S.A.S.<br>Bar No. 260,301 C.S.J.</span></p>
+
+        <div class="contact-row">
+          <span class="lbl">Email</span>
+          <a href="mailto:a.jaramillo@jgaabogados.com">a.jaramillo@jgaabogados.com</a>
+        </div>
+        <div class="contact-row">
+          <span class="lbl"><span data-lang-show="es" class="show">Teléfono</span><span data-lang-show="en">Phone</span></span>
+          <a href="tel:+573006674956">+57 300 667 4956</a>
+        </div>
+        <div class="contact-row">
+          <span class="lbl"><span data-lang-show="es" class="show">Oficina</span><span data-lang-show="en">Office</span></span>
+          <span class="val">Bogotá D.C., Colombia</span>
+        </div>
+        <div class="contact-row">
+          <span class="lbl">Web</span>
+          <a href="https://jgaabogados.com" target="_blank" rel="noopener">jgaabogados.com</a>
+        </div>
+
+        <a class="contact-btn" href="mailto:a.jaramillo@jgaabogados.com?subject=Ley%20814%20%C2%B7%20Consulta%20de%20inversi%C3%B3n">
+          <span data-lang-show="es" class="show">Escribir a JGA</span><span data-lang-show="en">Write to JGA</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer>
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+      <div class="footer-jga">JGA</div>
+      <div class="footer-sub">BUSINESS · INVESTMENT<br>IP-ENTERTAINMENT LAW</div>
+      <p class="footer-meta">
+        © 2025 JGA Abogados S.A.S. · Bogotá D.C., Colombia<br>
+        <a href="https://jgaabogados.com" target="_blank" rel="noopener">jgaabogados.com</a>
+      </p>
+    </div>
+
+    <div class="footer-disclaimer">
+      <span data-lang-show="es" class="show"><strong>Aviso legal.</strong> Este documento es de carácter informativo y no constituye asesoría legal o tributaria. La aplicación del régimen Ley 814 a un caso concreto requiere análisis específico por parte de profesionales habilitados. Las cifras del caso trabajado, la calculadora y el waterfall son ilustrativas y dependen de la estructura contractual pactada en cada operación; no garantizan resultados.</span>
+      <span data-lang-show="en"><strong>Legal notice.</strong> This document is informational and does not constitute legal or tax advice. Application of the Law 814 regime to a specific case requires case-by-case analysis by qualified professionals. Figures in the worked example, calculator and waterfall are illustrative and depend on the contractual structure agreed in each transaction; they do not guarantee outcomes.</span>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+/* Language toggle */
+const langButtons = document.querySelectorAll('.lang button');
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-lang-show]').forEach(el=>{
+    if(el.getAttribute('data-lang-show')===lang){ el.classList.add('show'); }
+    else { el.classList.remove('show'); }
+  });
+  langButtons.forEach(b=>b.classList.toggle('on', b.dataset.lang===lang));
+  document.title = lang==='es'
+    ? 'Ley 814 de 2003 · "Ley de Cine" · Régimen de Inversión — JGA Abogados'
+    : 'Law 814 of 2003 · "Film Law" · Investment Regime — JGA Abogados';
+}
+langButtons.forEach(btn=>btn.addEventListener('click',()=>setLang(btn.dataset.lang)));
+setLang('es');
+
+/* ─── Calculator ─── */
+const amtInput = document.getElementById('amt');
+const amtDisplay = document.getElementById('amt-display');
+const rateButtons = document.querySelectorAll('.calc-toggle button');
+const outDed = document.getElementById('out-ded');
+const outSave = document.getElementById('out-save');
+const outNet = document.getElementById('out-net');
+const outCic = document.getElementById('out-cic');
+const outPct = document.getElementById('out-pct');
+
+let currentRate = 0.35;
+
+function fmt(n){
+  const rounded = Math.round(n*100)/100;
+  let str = rounded.toFixed(2).replace(/\.?0+$/,'');
+  const parts = str.split('.');
+  const intPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  return parts.length>1 ? intPart + ',' + parts[1] : intPart;
+}
+function fmtPct(n){
+  const rounded = Math.round(n*10000)/100;
+  let str = rounded.toFixed(2).replace(/\.?0+$/,'');
+  return str.replace('.', ',') + '%';
+}
+function recalc(){
+  const amt = parseFloat(amtInput.value);
+  const ded = amt * 1.65;
+  const save = ded * currentRate;
+  const net = amt - save;
+  const pct = 1.65 * currentRate;
+  amtDisplay.textContent = fmt(amt);
+  outDed.textContent = fmt(ded);
+  outSave.textContent = fmt(save);
+  outNet.textContent = fmt(net);
+  outCic.textContent = fmt(amt);
+  outPct.textContent = fmtPct(pct);
+}
+amtInput.addEventListener('input', recalc);
+rateButtons.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    rateButtons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    currentRate = parseFloat(btn.dataset.rate);
+    recalc();
+  });
+});
+recalc();
+
+/* ─── Case study calculator ─── */
+const cAmtInput = document.getElementById('c-amt-input');
+const cAmtDisplay = document.getElementById('c-amt');
+const cRateButtons = document.querySelectorAll('.case-toggle button');
+const cRateVal = document.getElementById('c-rate-val');
+const cDeduction = document.getElementById('c-deduction');
+const cSaving = document.getElementById('c-saving');
+const cSaving2 = document.getElementById('c-saving-2');
+const cNetcost = document.getElementById('c-netcost');
+const cRecoup = document.getElementById('c-recoup');
+const cRecoup2 = document.getElementById('c-recoup-2');
+const c100 = document.getElementById('c-100');
+const cPremium = document.getElementById('c-premium');
+const cPremium2 = document.getElementById('c-premium-2');
+const c120 = document.getElementById('c-120');
+const cTotal = document.getElementById('c-total');
+
+let cCurrentRate = 0.35;
+
+function caseRecalc(){
+  const amt = parseFloat(cAmtInput.value);
+  const ded = amt * 1.65;
+  const sav = ded * cCurrentRate;
+  const net = amt - sav;
+  const premium = amt * 0.20;
+  const total = amt + premium;
+  cAmtDisplay.textContent = fmt(amt);
+  cRateVal.textContent = (cCurrentRate*100) + '%';
+  cDeduction.textContent = fmt(ded);
+  cSaving.textContent = fmt(sav);
+  cSaving2.textContent = fmt(sav);
+  cNetcost.textContent = fmt(net);
+  cRecoup.textContent = fmt(net);
+  cRecoup2.textContent = fmt(net);
+  c100.textContent = fmt(amt);
+  cPremium.textContent = fmt(premium);
+  cPremium2.textContent = fmt(premium);
+  c120.textContent = fmt(total);
+  cTotal.textContent = fmt(total);
+}
+cAmtInput.addEventListener('input', caseRecalc);
+cRateButtons.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    cRateButtons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    cCurrentRate = parseFloat(btn.dataset.rate);
+    caseRecalc();
+  });
+});
+caseRecalc();
+</script>
+
+</body>
+</html>
