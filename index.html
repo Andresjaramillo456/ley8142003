@@ -1386,82 +1386,30 @@ footer{background:#000;color:rgba(255,255,255,.55);padding:4rem 0 2.5rem}
 .footer-disclaimer strong{color:rgba(255,255,255,.85);font-weight:800}
 
 /* ───────────────────────────────────────────────
-   LAPTOP BREAKPOINT — compacta tablas y bloques
-   numéricos en pantallas medianas (900-1400px)
+   ZOOM control — botones +/− en el topbar
+   El usuario ajusta y la preferencia se guarda.
+   El valor inicial se calcula vía JS según viewport.
 ─────────────────────────────────────────────── */
-@media(min-width:901px) and (max-width:1400px){
-  /* dtable (sección 03 — declaración de renta) */
-  .dtable thead th{padding:16px 18px;font-size:12px}
-  .dtable tbody td{padding:16px 18px}
-  .dtable td.label{font-size:15px}
-  .dtable td.value{font-size:22px}
-  .dtable td.currency{font-size:11px}
-  .dtable td.subhead{font-size:11px;padding-top:18px}
-  .dtable .savings-row td{padding:18px 18px}
-  .dtable .savings-row td.savings-value{font-size:32px}
-
-  /* legal-table (sección 09) */
-  .legal-table thead th{padding:18px 20px;font-size:12px}
-  .legal-table tbody td{padding:18px 20px}
-  .legal-table .norma{font-size:15px}
-  .legal-table .year{font-size:1.3rem}
-  .legal-table .desc{font-size:.88rem}
-
-  /* market (sección 08) */
-  .market-head{padding:1.6rem 1.9rem 1.2rem}
-  .market-head h4{font-size:1.25rem}
-  .market-head p{font-size:.86rem}
-  .market-body{padding:1.1rem 1.9rem .3rem}
-  .market-row{padding:.75rem 0}
-  .market-row .val{font-size:1.2rem}
-  .market-foot{padding:1.4rem 1.9rem}
-  .market-foot .val{font-size:1.85rem}
-
-  /* case (sección 10) */
-  .case-params{padding:1.6rem 2rem}
-  .case-param-val{font-size:1.5rem}
-  .case-phases{padding:2rem}
-  .case-phase{margin-bottom:1.6rem}
-  .case-phase-num{font-size:1.7rem}
-  .case-phase h4{font-size:1rem}
-  .case-phase-total{font-size:1.2rem}
-  .case-row{padding:.75rem 0}
-  .case-row .val{font-size:1.02rem}
-  .case-total-block{padding:1.5rem 2rem}
-  .case-total-block .val{font-size:2.1rem}
-  .case-disclaimer{padding:1.2rem 2rem;font-size:.82rem}
-
-  /* glossary (sección 13) */
-  .glossary-row{padding:1.3rem 1.9rem;grid-template-columns:240px 1fr;gap:1.5rem}
-  .glossary-term{font-size:.88rem}
-  .glossary-def{font-size:.88rem}
-
-  /* due diligence (sección 12) */
-  .dd-item{padding:1.4rem 1.6rem}
-  .dd-item h5{font-size:.92rem}
-  .dd-item p{font-size:.85rem}
-
-  /* faq (sección 11) */
-  .faq-item summary{font-size:.98rem;padding:1.4rem 0}
-  .faq-item .a{font-size:.92rem;padding:0 0 1.4rem}
-
-  /* hero */
-  .hero-title{font-size:clamp(2.4rem,5vw,3.8rem)}
-  .kpi-strip{padding:2.4rem 2rem}
-  .kpi-demo .kpi-val{font-size:2.6rem}
-
-  /* CTA (sección final) */
-  .cta{padding:5rem 0 4rem}
-  .cta h2{font-size:2.2rem}
-  .cta-service h5{font-size:.9rem}
-  .cta-service p{font-size:.84rem}
-  .contact-card{padding:2.2rem 2rem}
-
-  /* calculadora (sección 04) */
-  .calc-row .val{font-size:1.3rem}
-  .calc-feat .val{font-size:2rem}
-  .calc-side{padding:2rem}
+.zoom{display:flex;gap:.25rem;align-items:center}
+.zoom-label{
+  font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  margin-right:.45rem;
 }
+.zoom button{
+  font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:700;
+  width:28px;height:28px;
+  border:1.5px solid rgba(255,255,255,.4);cursor:pointer;
+  background:none;color:rgba(255,255,255,.75);transition:all .15s;
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:0;line-height:1;
+}
+.zoom button:hover{
+  background:rgba(255,255,255,.08);
+  color:var(--w);border-color:rgba(255,255,255,.7);
+}
+.zoom button:active{background:var(--col);color:#143B78;border-color:var(--col)}
 
 /* ───────────────────────────────────────────────
    MOBILE
@@ -1590,6 +1538,11 @@ footer{background:#000;color:rgba(255,255,255,.55);padding:4rem 0 2.5rem}
       <div class="brand-sub">BUSINESS · INVESTMENT<br>IP-ENTERTAINMENT LAW</div>
     </a>
     <div class="topbar-right">
+      <div class="zoom">
+        <span class="zoom-label">ZOOM</span>
+        <button data-zoom="out" aria-label="Zoom out" title="Reducir">−</button>
+        <button data-zoom="in" aria-label="Zoom in" title="Aumentar">+</button>
+      </div>
       <div class="lang">
         <button data-lang="es" class="on">ES</button>
         <button data-lang="en">EN</button>
@@ -2124,14 +2077,14 @@ footer{background:#000;color:rgba(255,255,255,.55);padding:4rem 0 2.5rem}
         </div>
 
         <div class="pa-arrow">
-          <span class="pa-arrow-label"><span data-lang-show="es" class="show">Desembolsos<br>según OF</span><span data-lang-show="en">Disbursements<br>per budget</span></span>
+          <span class="pa-arrow-label"><span data-lang-show="es" class="show">Pagos según<br>presupuesto</span><span data-lang-show="en">Payments per<br>budget</span></span>
           <span class="pa-arrow-line"></span>
         </div>
 
         <div class="pa-node">
           <div class="pa-node-tag">03</div>
-          <h5><span data-lang-show="es" class="show">Productor</span><span data-lang-show="en">Producer</span></h5>
-          <div class="sub"><span data-lang-show="es" class="show">Recibe fondos<br>contra ejecución</span><span data-lang-show="en">Receives funds<br>against execution</span></div>
+          <h5><span data-lang-show="es" class="show">Proveedores</span><span data-lang-show="en">Suppliers</span></h5>
+          <div class="sub"><span data-lang-show="es" class="show">Equipos, técnicos, locaciones, talentos, posproducción</span><span data-lang-show="en">Equipment, crew, locations, talent, post-production</span></div>
         </div>
       </div>
 
@@ -2155,7 +2108,7 @@ footer{background:#000;color:rgba(255,255,255,.55);padding:4rem 0 2.5rem}
         <div class="pa-guard">
           <span class="pa-guard-num">04</span>
           <h6><span data-lang-show="es" class="show">Desembolsos controlados</span><span data-lang-show="en">Controlled disbursements</span></h6>
-          <p><span data-lang-show="es" class="show">El productor <strong>solo recibe los fondos contra ejecución</strong> documentada del plan de inversión y del presupuesto aprobado.</span><span data-lang-show="en">The producer <strong>only receives funds against documented execution</strong> of the investment plan and approved budget.</span></p>
+          <p><span data-lang-show="es" class="show">La fiduciaria desembolsa <strong>directamente a proveedores</strong> contra ejecución documentada del plan de inversión y del presupuesto aprobado por Mincultura. El productor instruye pero no recibe los fondos.</span><span data-lang-show="en">The trustee disburses <strong>directly to suppliers</strong> against documented execution of the investment plan and the budget approved by the Ministry of Culture. The producer instructs but does not receive the funds.</span></p>
         </div>
       </div>
     </div>
@@ -3079,6 +3032,35 @@ cRateButtons.forEach(btn=>{
   });
 });
 caseRecalc();
+
+/* ─── Zoom control ─── */
+const zoomBtns = document.querySelectorAll('.zoom button');
+const ZOOM_KEY = 'jga-ley814-zoom';
+const ZOOM_MIN = 0.55;
+const ZOOM_MAX = 1.20;
+const ZOOM_STEP = 0.05;
+
+function getInitialZoom(){
+  const stored = localStorage.getItem(ZOOM_KEY);
+  if (stored) return parseFloat(stored);
+  const w = window.innerWidth;
+  if (w <= 1400) return 0.82;
+  if (w <= 1700) return 0.92;
+  return 1.0;
+}
+function applyZoom(level){
+  level = Math.round(Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, level)) * 100) / 100;
+  document.body.style.zoom = level;
+  localStorage.setItem(ZOOM_KEY, level);
+  return level;
+}
+let currentZoom = applyZoom(getInitialZoom());
+zoomBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const dir = btn.dataset.zoom === 'in' ? 1 : -1;
+    currentZoom = applyZoom(currentZoom + dir * ZOOM_STEP);
+  });
+});
 </script>
 
 </body>
